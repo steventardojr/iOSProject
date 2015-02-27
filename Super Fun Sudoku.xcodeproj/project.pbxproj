@@ -161,6 +161,7 @@
 				TargetAttributes = {
 					B0E521E11A87E1940044BE1A = {
 						CreatedOnToolsVersion = 6.1.1;
+						DevelopmentTeam = 2L92EUB6UQ;
 					};
 					B0E521F61A87E1940044BE1A = {
 						CreatedOnToolsVersion = 6.1.1;
@@ -336,6 +337,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				INFOPLIST_FILE = "Super Fun Sudoku/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -346,6 +348,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				INFOPLIST_FILE = "Super Fun Sudoku/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -405,6 +408,7 @@
 				B0E522031A87E1940044BE1A /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		B0E522041A87E1940044BE1A /* Build configuration list for PBXNativeTarget "Super Fun SudokuTests" */ = {
 			isa = XCConfigurationList;
@@ -413,6 +417,7 @@
 				B0E522061A87E1940044BE1A /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
