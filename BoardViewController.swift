@@ -1,15 +1,15 @@
 //
-//  BoardView.swift
+//  BoardViewController.swift
 //  Super Fun Sudoku
 //
-//  Created by Steven Tardo Jr. on 3/11/15.
+//  Created by Steven Tardo Jr. on 3/12/15.
 //  Copyright (c) 2015 CSCI 4661. All rights reserved.
 //
 
+import Foundation
 import UIKit
 
-
-class BoardView: UIViewController {
+class BoardViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
