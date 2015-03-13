@@ -6,7 +6,6 @@
 //  Copyright (c) 2015 CSCI 4661. All rights reserved.
 //
 
-import Foundation
 import UIKit
 
 class BoardViewController: UIViewController {
@@ -21,4 +20,8 @@ class BoardViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
+    override func touchesBegan(touches: NSSet, withEvent event: UIEvent) {
+        self.view.endEditing(true)
+    }
+
 }

@@ -7,13 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		B0C335491AB256E200382C81 /* BoardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0C335481AB256E200382C81 /* BoardViewController.swift */; };
 		B0E521E81A87E1940044BE1A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0E521E71A87E1940044BE1A /* AppDelegate.swift */; };
 		B0E521EA1A87E1940044BE1A /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0E521E91A87E1940044BE1A /* ViewController.swift */; };
 		B0E521ED1A87E1940044BE1A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B0E521EB1A87E1940044BE1A /* Main.storyboard */; };
 		B0E521EF1A87E1940044BE1A /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B0E521EE1A87E1940044BE1A /* Images.xcassets */; };
 		B0E521F21A87E1940044BE1A /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = B0E521F01A87E1940044BE1A /* LaunchScreen.xib */; };
 		B0E521FE1A87E1940044BE1A /* Super_Fun_SudokuTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0E521FD1A87E1940044BE1A /* Super_Fun_SudokuTests.swift */; };
-		B0F7CFB31AB23EC9005E83CA /* BoardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0F7CFB21AB23EC9005E83CA /* BoardViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -27,6 +27,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		B0C335481AB256E200382C81 /* BoardViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BoardViewController.swift; sourceTree = "<group>"; };
 		B0E521E21A87E1940044BE1A /* Super Fun Sudoku.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Super Fun Sudoku.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		B0E521E61A87E1940044BE1A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B0E521E71A87E1940044BE1A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -37,7 +38,6 @@
 		B0E521F71A87E1940044BE1A /* Super Fun SudokuTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Super Fun SudokuTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		B0E521FC1A87E1940044BE1A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B0E521FD1A87E1940044BE1A /* Super_Fun_SudokuTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Super_Fun_SudokuTests.swift; sourceTree = "<group>"; };
-		B0F7CFB21AB23EC9005E83CA /* BoardViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BoardViewController.swift; path = ../BoardViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -80,9 +80,9 @@
 			isa = PBXGroup;
 			children = (
 				B0E521E71A87E1940044BE1A /* AppDelegate.swift */,
-				B0F7CFB21AB23EC9005E83CA /* BoardViewController.swift */,
 				B0E521E91A87E1940044BE1A /* ViewController.swift */,
 				B0E521EB1A87E1940044BE1A /* Main.storyboard */,
+				B0C335481AB256E200382C81 /* BoardViewController.swift */,
 				B0E521EE1A87E1940044BE1A /* Images.xcassets */,
 				B0E521F01A87E1940044BE1A /* LaunchScreen.xib */,
 				B0E521E51A87E1940044BE1A /* Supporting Files */,
@@ -218,7 +218,7 @@
 			files = (
 				B0E521EA1A87E1940044BE1A /* ViewController.swift in Sources */,
 				B0E521E81A87E1940044BE1A /* AppDelegate.swift in Sources */,
-				B0F7CFB31AB23EC9005E83CA /* BoardViewController.swift in Sources */,
+				B0C335491AB256E200382C81 /* BoardViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
