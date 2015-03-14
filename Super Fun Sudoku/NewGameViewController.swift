@@ -17,6 +17,7 @@ class NewGameViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
+        playerLabel.text = playerModel.getPlayerName()
     }
     
     override func didReceiveMemoryWarning() {
@@ -24,7 +25,4 @@ class NewGameViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
-    override func viewDidAppear(animated: Bool) {
-        playerLabel.text = playerModel.getPlayerName()
-    }
 }

@@ -11,7 +11,7 @@ import UIKit
 
 class NewPlayerViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet var playerName: UITextField!
-    var playerModel: PlayerModel!
+    let playerModel = PlayerModel()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -38,7 +38,7 @@ class NewPlayerViewController: UIViewController, UITextFieldDelegate {
         var destinationVC = segue.destinationViewController as NewGameViewController
         let playerNameString = playerName.text
         playerModel.setPlayerName(playerNameString)
-        playerModel.setUserDefaults()
+        //playerModel.setUserDefaults()
         destinationVC.playerModel = playerModel
     }
 }
