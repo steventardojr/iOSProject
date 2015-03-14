@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		B0C335491AB256E200382C81 /* BoardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0C335481AB256E200382C81 /* BoardViewController.swift */; };
+		B0CC88D21AB403090030059C /* NewGameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0CC88D11AB403090030059C /* NewGameViewController.swift */; };
+		B0CC88D41AB4034C0030059C /* NewPlayerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0CC88D31AB4034C0030059C /* NewPlayerViewController.swift */; };
 		B0E521E81A87E1940044BE1A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0E521E71A87E1940044BE1A /* AppDelegate.swift */; };
 		B0E521EA1A87E1940044BE1A /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0E521E91A87E1940044BE1A /* ViewController.swift */; };
 		B0E521ED1A87E1940044BE1A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B0E521EB1A87E1940044BE1A /* Main.storyboard */; };
@@ -28,6 +30,8 @@
 
 /* Begin PBXFileReference section */
 		B0C335481AB256E200382C81 /* BoardViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BoardViewController.swift; sourceTree = "<group>"; };
+		B0CC88D11AB403090030059C /* NewGameViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewGameViewController.swift; sourceTree = "<group>"; };
+		B0CC88D31AB4034C0030059C /* NewPlayerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewPlayerViewController.swift; sourceTree = "<group>"; };
 		B0E521E21A87E1940044BE1A /* Super Fun Sudoku.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Super Fun Sudoku.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		B0E521E61A87E1940044BE1A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B0E521E71A87E1940044BE1A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -82,6 +86,8 @@
 				B0E521E71A87E1940044BE1A /* AppDelegate.swift */,
 				B0E521E91A87E1940044BE1A /* ViewController.swift */,
 				B0E521EB1A87E1940044BE1A /* Main.storyboard */,
+				B0CC88D31AB4034C0030059C /* NewPlayerViewController.swift */,
+				B0CC88D11AB403090030059C /* NewGameViewController.swift */,
 				B0C335481AB256E200382C81 /* BoardViewController.swift */,
 				B0E521EE1A87E1940044BE1A /* Images.xcassets */,
 				B0E521F01A87E1940044BE1A /* LaunchScreen.xib */,
@@ -217,6 +223,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				B0E521EA1A87E1940044BE1A /* ViewController.swift in Sources */,
+				B0CC88D21AB403090030059C /* NewGameViewController.swift in Sources */,
+				B0CC88D41AB4034C0030059C /* NewPlayerViewController.swift in Sources */,
 				B0E521E81A87E1940044BE1A /* AppDelegate.swift in Sources */,
 				B0C335491AB256E200382C81 /* BoardViewController.swift in Sources */,
 			);

@@ -108,7 +108,7 @@
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <segue destination="r7z-4W-NMD" kind="show" id="ATM-dH-JKY"/>
+                                    <segue destination="r7z-4W-NMD" kind="show" id="uR4-4N-d6b"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -123,10 +123,10 @@
             </objects>
             <point key="canvasLocation" x="1741" y="339"/>
         </scene>
-        <!--View Controller-->
+        <!--New Game View Controller-->
         <scene sceneID="a18-PC-m7a">
             <objects>
-                <viewController modalTransitionStyle="flipHorizontal" id="r7z-4W-NMD" sceneMemberID="viewController">
+                <viewController modalTransitionStyle="flipHorizontal" id="r7z-4W-NMD" customClass="NewGameViewController" customModule="Super_Fun_Sudoku" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="OwJ-Nm-5gi"/>
                         <viewControllerLayoutGuide type="bottom" id="pDm-Za-tm5"/>
@@ -135,25 +135,25 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Player 1" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="spQ-Dl-uXd">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Player 1" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="spQ-Dl-uXd">
                                 <rect key="frame" x="269" y="213" width="62" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="WIN/LOSS: 0/0" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Sc2-jZ-ZTJ">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="WIN/LOSS: 0/0" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Sc2-jZ-ZTJ">
                                 <rect key="frame" x="241" y="242" width="118" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="WIN PERCENTAGE: 0%" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qZY-Ga-zRZ">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="WIN PERCENTAGE: 0%" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qZY-Ga-zRZ">
                                 <rect key="frame" x="208" y="271" width="185" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gSC-K5-Zcb">
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gSC-K5-Zcb">
                                 <rect key="frame" x="183" y="356" width="33" height="30"/>
                                 <state key="normal" title="Easy">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
@@ -162,7 +162,7 @@
                                     <segue destination="Yob-9e-A1p" kind="show" id="0Vr-D4-veD"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uGv-lN-p8t">
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uGv-lN-p8t">
                                 <rect key="frame" x="383" y="356" width="34" height="30"/>
                                 <state key="normal" title="Hard">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
@@ -171,7 +171,7 @@
                                     <segue destination="Yob-9e-A1p" kind="show" id="R7l-lC-URh"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="I9k-aK-e2g">
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="I9k-aK-e2g">
                                 <rect key="frame" x="272" y="356" width="56" height="30"/>
                                 <state key="normal" title="Medium">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
@@ -197,10 +197,14 @@
                             <constraint firstItem="qZY-Ga-zRZ" firstAttribute="centerX" secondItem="Sc2-jZ-ZTJ" secondAttribute="centerX" id="sf9-C6-oLd"/>
                         </constraints>
                     </view>
+                    <navigationItem key="navigationItem" id="n9e-5B-GsT"/>
+                    <connections>
+                        <outlet property="playerLabel" destination="spQ-Dl-uXd" id="5u6-NU-0by"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gao-Xl-gTO" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1727" y="1058"/>
+            <point key="canvasLocation" x="1741" y="1072"/>
         </scene>
         <!--Board View Controller-->
         <scene sceneID="MoE-EA-TRE">
@@ -1241,12 +1245,12 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="LwT-bg-gvf" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2356" y="1128"/>
+            <point key="canvasLocation" x="2492" y="1072"/>
         </scene>
-        <!--View Controller-->
+        <!--New Player View Controller-->
         <scene sceneID="EMK-fh-SKd">
             <objects>
-                <viewController modalTransitionStyle="flipHorizontal" id="gfe-XQ-cSL" sceneMemberID="viewController">
+                <viewController modalTransitionStyle="flipHorizontal" id="gfe-XQ-cSL" customClass="NewPlayerViewController" customModule="Super_Fun_Sudoku" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="VU2-66-T4f"/>
                         <viewControllerLayoutGuide type="bottom" id="11G-8h-NJV"/>
@@ -1261,7 +1265,7 @@
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <segue destination="r7z-4W-NMD" kind="show" id="sht-6s-W94"/>
+                                    <segue destination="r7z-4W-NMD" kind="show" id="OcJ-Zv-02T"/>
                                 </connections>
                             </button>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="eYh-P3-mFI">
@@ -1271,6 +1275,9 @@
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <segue destination="r7z-4W-NMD" kind="show" id="EtG-4t-cf6"/>
+                                </connections>
                             </textField>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Enter your name:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5kT-CR-mUK">
                                 <rect key="frame" x="235" y="256" width="131" height="21"/>
@@ -1289,6 +1296,9 @@
                             <constraint firstItem="eYh-P3-mFI" firstAttribute="centerX" secondItem="4Wf-j5-WIF" secondAttribute="centerX" id="pD3-6s-R2A"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="playerName" destination="eYh-P3-mFI" id="71M-fT-XAH"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="CJ6-0W-iqz" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -1296,7 +1306,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="sht-6s-W94"/>
-        <segue reference="R7l-lC-URh"/>
+        <segue reference="uR4-4N-d6b"/>
+        <segue reference="0Vr-D4-veD"/>
     </inferredMetricsTieBreakers>
 </document>
