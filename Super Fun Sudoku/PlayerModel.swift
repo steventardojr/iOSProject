@@ -9,14 +9,16 @@
 import Foundation
 
 class PlayerModel {
-    var playerName: String!
+    var playerName: String
     var win: Int
     var loss: Int
+    var players: [String]
     
     init() {
         self.playerName = ""
-        self.win = 0
+        self.win = 1
         self.loss = 0
+        self.players = []
     }
     
     func getPlayerName() -> String {
@@ -31,8 +33,9 @@ class PlayerModel {
         return self.loss
     }
     
-    func setPlayerName(newPlayerName: String!) {
+    func setPlayerName(newPlayerName: String) {
         self.playerName = newPlayerName
+        self.players += [playerName]
     }
     
     func setWins(newWins: Int) {
@@ -43,8 +46,24 @@ class PlayerModel {
         self.loss = newLosses
     }
     
+    func getPlayerList() -> [String] {
+        let userDefaults = NSUserDefaults.standardUserDefaults()
+        self.players = userDefaults.objectForKey("players") as [String]
+        return self.players
+    }
+    
     func setUserDefaults() {
         let userDefaults = NSUserDefaults.standardUserDefaults()
-        userDefaults.setObject(self, forKey: self.playerName)
+        userDefaults.setObject(self.playerName as String, forKey: self.playerName)
+        userDefaults.setInteger(win, forKey: "\(playerName)win")
+        userDefaults.setInteger(loss, forKey: "\(playerName)loss")
+        userDefaults.setObject(self.players as Array, forKey: "players")
+    }
+    
+    func getUserDefaults() {
+        let userDefaults = NSUserDefaults.standardUserDefaults()
+        playerName = userDefaults.objectForKey(self.playerName) as String
+        win = userDefaults.integerForKey("\(playerName)win")
+        loss = userDefaults.integerForKey("\(playerName)loss")
     }
 }

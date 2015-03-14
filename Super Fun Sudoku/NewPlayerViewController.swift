@@ -6,7 +6,6 @@
 //  Copyright (c) 2015 CSCI 4661. All rights reserved.
 //
 
-import Foundation
 import UIKit
 
 class NewPlayerViewController: UIViewController, UITextFieldDelegate {
@@ -38,7 +37,7 @@ class NewPlayerViewController: UIViewController, UITextFieldDelegate {
         var destinationVC = segue.destinationViewController as NewGameViewController
         let playerNameString = playerName.text
         playerModel.setPlayerName(playerNameString)
-        //playerModel.setUserDefaults()
+        playerModel.setUserDefaults()
         destinationVC.playerModel = playerModel
     }
 }

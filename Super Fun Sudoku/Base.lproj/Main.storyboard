@@ -90,10 +90,10 @@
             </objects>
             <point key="canvasLocation" x="991" y="339"/>
         </scene>
-        <!--View Controller-->
+        <!--Load Player View Controller-->
         <scene sceneID="hLE-bK-Dw5">
             <objects>
-                <viewController modalTransitionStyle="flipHorizontal" id="Dpx-hH-SqK" sceneMemberID="viewController">
+                <viewController modalTransitionStyle="flipHorizontal" id="Dpx-hH-SqK" customClass="LoadPlayerViewController" customModule="Super_Fun_Sudoku" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="QqU-lK-Ani"/>
                         <viewControllerLayoutGuide type="bottom" id="s5c-9c-Ork"/>
@@ -102,9 +102,15 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wjd-uI-wx4">
+                                <rect key="frame" x="0.0" y="219" width="600" height="162"/>
+                            </pickerView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2gN-oS-OuL">
-                                <rect key="frame" x="272" y="285" width="56" height="30"/>
-                                <state key="normal" title="Player 1">
+                                <rect key="frame" x="272" y="389" width="56" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="56" id="ok4-Lk-Ueq"/>
+                                </constraints>
+                                <state key="normal" title="Load">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
@@ -114,10 +120,16 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="2gN-oS-OuL" firstAttribute="centerY" secondItem="Jca-95-JoV" secondAttribute="centerY" id="HEc-GA-LAz"/>
-                            <constraint firstItem="2gN-oS-OuL" firstAttribute="centerX" secondItem="Jca-95-JoV" secondAttribute="centerX" id="ozt-0p-pLj"/>
+                            <constraint firstItem="wjd-uI-wx4" firstAttribute="leading" secondItem="Jca-95-JoV" secondAttribute="leading" id="8Ab-5M-nQK"/>
+                            <constraint firstItem="2gN-oS-OuL" firstAttribute="top" secondItem="wjd-uI-wx4" secondAttribute="bottom" constant="8" symbolic="YES" id="8NA-92-EAQ"/>
+                            <constraint firstItem="wjd-uI-wx4" firstAttribute="centerY" secondItem="Jca-95-JoV" secondAttribute="centerY" id="gcE-K8-em0"/>
+                            <constraint firstAttribute="trailing" secondItem="wjd-uI-wx4" secondAttribute="trailing" id="zfg-DI-Oe8"/>
+                            <constraint firstItem="wjd-uI-wx4" firstAttribute="centerX" secondItem="2gN-oS-OuL" secondAttribute="centerX" id="zwP-85-0c4"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="picker" destination="wjd-uI-wx4" id="Q7C-gR-PKM"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="wAJ-Pg-sUz" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -199,6 +211,8 @@
                     </view>
                     <connections>
                         <outlet property="playerLabel" destination="spQ-Dl-uXd" id="5u6-NU-0by"/>
+                        <outlet property="winLoss" destination="Sc2-jZ-ZTJ" id="s28-lf-iSR"/>
+                        <outlet property="winPercent" destination="qZY-Ga-zRZ" id="boq-5X-zd0"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gao-Xl-gTO" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -1305,7 +1319,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="EtG-4t-cf6"/>
+        <segue reference="uR4-4N-d6b"/>
         <segue reference="0Vr-D4-veD"/>
     </inferredMetricsTieBreakers>
 </document>
