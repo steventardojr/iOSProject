@@ -11,6 +11,7 @@ import UIKit
 
 class NewPlayerViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet var playerName: UITextField!
+    var playerModel: PlayerModel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -24,9 +25,20 @@ class NewPlayerViewController: UIViewController, UITextFieldDelegate {
         // Dispose of any resources that can be recreated.
     }
     
+    @IBAction func okButtonPushed(sender: UIButton) {
+        playerName.resignFirstResponder()
+    }
+    
     func textFieldShouldReturn(textField: UITextField!) -> Bool {
-        textField.resignFirstResponder()
+        playerName.resignFirstResponder()
         return true
     }
     
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        var destinationVC = segue.destinationViewController as NewGameViewController
+        let playerNameString = playerName.text
+        playerModel.setPlayerName(playerNameString)
+        playerModel.setUserDefaults()
+        destinationVC.playerModel = playerModel
+    }
 }

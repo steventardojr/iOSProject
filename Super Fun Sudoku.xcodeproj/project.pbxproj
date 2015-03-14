@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		B076B9B81AB4C364004325A3 /* PlayerModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B076B9B71AB4C364004325A3 /* PlayerModel.swift */; };
 		B0C335491AB256E200382C81 /* BoardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0C335481AB256E200382C81 /* BoardViewController.swift */; };
 		B0CC88D21AB403090030059C /* NewGameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0CC88D11AB403090030059C /* NewGameViewController.swift */; };
 		B0CC88D41AB4034C0030059C /* NewPlayerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0CC88D31AB4034C0030059C /* NewPlayerViewController.swift */; };
@@ -29,6 +30,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		B076B9B71AB4C364004325A3 /* PlayerModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlayerModel.swift; sourceTree = "<group>"; };
 		B0C335481AB256E200382C81 /* BoardViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BoardViewController.swift; sourceTree = "<group>"; };
 		B0CC88D11AB403090030059C /* NewGameViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewGameViewController.swift; sourceTree = "<group>"; };
 		B0CC88D31AB4034C0030059C /* NewPlayerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewPlayerViewController.swift; sourceTree = "<group>"; };
@@ -87,6 +89,7 @@
 				B0E521E91A87E1940044BE1A /* ViewController.swift */,
 				B0E521EB1A87E1940044BE1A /* Main.storyboard */,
 				B0CC88D31AB4034C0030059C /* NewPlayerViewController.swift */,
+				B076B9B71AB4C364004325A3 /* PlayerModel.swift */,
 				B0CC88D11AB403090030059C /* NewGameViewController.swift */,
 				B0C335481AB256E200382C81 /* BoardViewController.swift */,
 				B0E521EE1A87E1940044BE1A /* Images.xcassets */,
@@ -222,6 +225,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B076B9B81AB4C364004325A3 /* PlayerModel.swift in Sources */,
 				B0E521EA1A87E1940044BE1A /* ViewController.swift in Sources */,
 				B0CC88D21AB403090030059C /* NewGameViewController.swift in Sources */,
 				B0CC88D41AB4034C0030059C /* NewPlayerViewController.swift in Sources */,

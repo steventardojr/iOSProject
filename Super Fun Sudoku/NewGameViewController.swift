@@ -11,6 +11,8 @@ import UIKit
 
 class NewGameViewController: UIViewController {
     @IBOutlet var playerLabel: UILabel!
+    var playerNameString: String!
+    var playerModel: PlayerModel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -22,5 +24,7 @@ class NewGameViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
-    
+    override func viewDidAppear(animated: Bool) {
+        playerLabel.text = playerModel.getPlayerName()
+    }
 }
