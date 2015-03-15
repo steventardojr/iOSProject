@@ -117,17 +117,47 @@
                                     <segue destination="r7z-4W-NMD" kind="show" id="uR4-4N-d6b"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="J88-b5-5iP">
+                                <rect key="frame" x="254" y="465" width="93" height="30"/>
+                                <state key="normal" title="Create Player">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0Gy-c8-AAK">
+                                <rect key="frame" x="278" y="427" width="44" height="30"/>
+                                <state key="normal" title="Delete">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Xo5-Hw-Ptc">
+                                <rect key="frame" x="230" y="219" width="140" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="140" id="AN7-lv-hsu"/>
+                                    <constraint firstAttribute="height" constant="21" id="LhS-qg-Pao"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="wjd-uI-wx4" firstAttribute="leading" secondItem="Jca-95-JoV" secondAttribute="leading" id="8Ab-5M-nQK"/>
                             <constraint firstItem="2gN-oS-OuL" firstAttribute="top" secondItem="wjd-uI-wx4" secondAttribute="bottom" constant="8" symbolic="YES" id="8NA-92-EAQ"/>
+                            <constraint firstItem="0Gy-c8-AAK" firstAttribute="top" secondItem="2gN-oS-OuL" secondAttribute="bottom" constant="8" symbolic="YES" id="Ka6-xu-1yd"/>
+                            <constraint firstItem="Xo5-Hw-Ptc" firstAttribute="centerX" secondItem="wjd-uI-wx4" secondAttribute="centerX" id="M5h-gE-nTr"/>
+                            <constraint firstItem="J88-b5-5iP" firstAttribute="top" secondItem="0Gy-c8-AAK" secondAttribute="bottom" constant="8" symbolic="YES" id="WEx-M9-xlx"/>
+                            <constraint firstItem="J88-b5-5iP" firstAttribute="centerX" secondItem="2gN-oS-OuL" secondAttribute="centerX" id="fXQ-n2-Pbs"/>
                             <constraint firstItem="wjd-uI-wx4" firstAttribute="centerY" secondItem="Jca-95-JoV" secondAttribute="centerY" id="gcE-K8-em0"/>
+                            <constraint firstItem="Xo5-Hw-Ptc" firstAttribute="top" secondItem="wjd-uI-wx4" secondAttribute="top" id="sbY-f7-cEH"/>
+                            <constraint firstItem="0Gy-c8-AAK" firstAttribute="centerX" secondItem="2gN-oS-OuL" secondAttribute="centerX" id="vZb-hG-6uV"/>
                             <constraint firstAttribute="trailing" secondItem="wjd-uI-wx4" secondAttribute="trailing" id="zfg-DI-Oe8"/>
                             <constraint firstItem="wjd-uI-wx4" firstAttribute="centerX" secondItem="2gN-oS-OuL" secondAttribute="centerX" id="zwP-85-0c4"/>
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="loadButton" destination="2gN-oS-OuL" id="GXO-4V-ruh"/>
+                        <outlet property="noSavedPlayersLabel" destination="Xo5-Hw-Ptc" id="Haq-Jf-qeb"/>
                         <outlet property="picker" destination="wjd-uI-wx4" id="Q7C-gR-PKM"/>
                     </connections>
                 </viewController>
@@ -1298,9 +1328,21 @@
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kdo-Zj-c92">
+                                <rect key="frame" x="165" y="227" width="270" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="21" id="TjR-ZG-KTN"/>
+                                    <constraint firstAttribute="width" constant="270" id="hLr-z8-ACy"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="kdo-Zj-c92" firstAttribute="centerX" secondItem="5kT-CR-mUK" secondAttribute="centerX" id="4di-wk-Pbf"/>
+                            <constraint firstItem="5kT-CR-mUK" firstAttribute="top" secondItem="kdo-Zj-c92" secondAttribute="bottom" constant="8" symbolic="YES" id="6J3-00-X0T"/>
                             <constraint firstItem="eYh-P3-mFI" firstAttribute="centerY" secondItem="s06-A0-iJK" secondAttribute="centerY" id="Jo1-kP-q3x"/>
                             <constraint firstItem="4Wf-j5-WIF" firstAttribute="top" secondItem="eYh-P3-mFI" secondAttribute="bottom" constant="8" symbolic="YES" id="MAZ-ck-kfy"/>
                             <constraint firstItem="eYh-P3-mFI" firstAttribute="top" secondItem="5kT-CR-mUK" secondAttribute="bottom" constant="8" symbolic="YES" id="O4x-Xc-8gT"/>
@@ -1310,6 +1352,7 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="nameAlreadyTakenLabel" destination="kdo-Zj-c92" id="nS3-nX-3hn"/>
                         <outlet property="playerName" destination="eYh-P3-mFI" id="71M-fT-XAH"/>
                     </connections>
                 </viewController>

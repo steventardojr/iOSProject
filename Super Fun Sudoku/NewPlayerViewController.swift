@@ -9,8 +9,10 @@
 import UIKit
 
 class NewPlayerViewController: UIViewController, UITextFieldDelegate {
+    @IBOutlet var nameAlreadyTakenLabel: UILabel!
     @IBOutlet var playerName: UITextField!
     let playerModel = PlayerModel()
+    var players: [String]!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -25,19 +27,28 @@ class NewPlayerViewController: UIViewController, UITextFieldDelegate {
     }
     
     @IBAction func okButtonPushed(sender: UIButton) {
-        playerName.resignFirstResponder()
+        if !(contains(playerModel.getPlayerList(), playerName.text)) {
+            playerName.resignFirstResponder()
+        }
+        else {
+            nameAlreadyTakenLabel.text = "That name has already been taken."
+        }
     }
     
     func textFieldShouldReturn(textField: UITextField!) -> Bool {
-        playerName.resignFirstResponder()
-        return true
+        if !(contains(playerModel.getPlayerList(), playerName.text)) {
+            playerName.resignFirstResponder()
+            return true
+        }
+        else {
+            nameAlreadyTakenLabel.text = "That name has already been taken."
+            return false
+        }
     }
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         var destinationVC = segue.destinationViewController as NewGameViewController
-        let playerNameString = playerName.text
-        playerModel.setPlayerName(playerNameString)
-        playerModel.setUserDefaults()
+        playerModel.setPlayerName(playerName.text)
         destinationVC.playerModel = playerModel
     }
 }

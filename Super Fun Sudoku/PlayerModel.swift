@@ -18,7 +18,13 @@ class PlayerModel {
         self.playerName = ""
         self.win = 1
         self.loss = 0
-        self.players = []
+        let userDefaults = NSUserDefaults.standardUserDefaults()
+        if userDefaults.objectForKey("players") == nil {
+            self.players = []
+        }
+        else {
+            self.players = userDefaults.objectForKey("players") as [String]
+        }
     }
     
     func getPlayerName() -> String {
@@ -36,34 +42,36 @@ class PlayerModel {
     func setPlayerName(newPlayerName: String) {
         self.playerName = newPlayerName
         self.players += [playerName]
+        setUserDefaults()
     }
     
     func setWins(newWins: Int) {
         self.win = newWins
+        setUserDefaults()
     }
     
     func setLosses(newLosses: Int) {
         self.loss = newLosses
+        setUserDefaults()
     }
     
     func getPlayerList() -> [String] {
-        let userDefaults = NSUserDefaults.standardUserDefaults()
-        self.players = userDefaults.objectForKey("players") as [String]
         return self.players
     }
     
     func setUserDefaults() {
         let userDefaults = NSUserDefaults.standardUserDefaults()
         userDefaults.setObject(self.playerName as String, forKey: self.playerName)
-        userDefaults.setInteger(win, forKey: "\(playerName)win")
-        userDefaults.setInteger(loss, forKey: "\(playerName)loss")
+        userDefaults.setInteger(self.win, forKey: "\(playerName)win")
+        userDefaults.setInteger(self.loss, forKey: "\(playerName)loss")
         userDefaults.setObject(self.players as Array, forKey: "players")
     }
     
     func getUserDefaults() {
         let userDefaults = NSUserDefaults.standardUserDefaults()
         playerName = userDefaults.objectForKey(self.playerName) as String
-        win = userDefaults.integerForKey("\(playerName)win")
-        loss = userDefaults.integerForKey("\(playerName)loss")
+        win = userDefaults.integerForKey("\(self.playerName)win")
+        loss = userDefaults.integerForKey("\(self.playerName)loss")
+        players = userDefaults.objectForKey("players") as [String]
     }
 }

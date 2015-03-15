@@ -12,7 +12,9 @@ class LoadPlayerViewController: UIViewController,UIPickerViewDataSource,UIPicker
     let playerModel = PlayerModel()
     var players: [String]!
     var selectedPlayer: String!
+    @IBOutlet var loadButton: UIButton!
     @IBOutlet var picker: UIPickerView!
+    @IBOutlet var noSavedPlayersLabel: UILabel!
    
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -21,6 +23,10 @@ class LoadPlayerViewController: UIViewController,UIPickerViewDataSource,UIPicker
         players = playerModel.getPlayerList()
         picker.dataSource = self
         picker.delegate = self
+        if playerModel.getPlayerList().isEmpty {
+            loadButton.enabled = false
+            noSavedPlayersLabel.text = "No Saved Players"
+        }
     }
 
     override func didReceiveMemoryWarning() {
