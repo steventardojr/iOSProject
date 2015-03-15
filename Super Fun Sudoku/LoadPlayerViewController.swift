@@ -36,6 +36,9 @@ class LoadPlayerViewController: UIViewController,UIPickerViewDataSource,UIPicker
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         var destinationVC = segue.destinationViewController as NewGameViewController
+        if selectedPlayer == nil {
+            selectedPlayer = players[0]
+        }
         playerModel.setPlayerName(selectedPlayer)
         playerModel.getUserDefaults()
         destinationVC.playerModel = playerModel

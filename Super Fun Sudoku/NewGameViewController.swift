@@ -28,7 +28,7 @@ class NewGameViewController: UIViewController {
             winPercentage = playerModel.getWins()/playerModel.getLosses()*100
         }
         winPercent.text = "WIN PERCENTAGE: \(winPercentage)%"
-        playerModel.setWins(5)
+        playerModel.setWins(playerModel.getWins() + 5)
     }
     
     override func didReceiveMemoryWarning() {

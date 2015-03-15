@@ -41,8 +41,9 @@ class PlayerModel {
     
     func setPlayerName(newPlayerName: String) {
         self.playerName = newPlayerName
-        self.players += [playerName]
-        setUserDefaults()
+        if !(contains(self.players, newPlayerName)) {
+            self.players += [self.playerName]
+        }
     }
     
     func setWins(newWins: Int) {
