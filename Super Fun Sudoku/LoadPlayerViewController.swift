@@ -43,7 +43,7 @@ class LoadPlayerViewController: UIViewController,UIPickerViewDataSource,UIPicker
         playerModel.getUserDefaults()
         destinationVC.playerModel = playerModel
     }
-
+    
     func numberOfComponentsInPickerView(pickerView: UIPickerView) -> Int {
         return 1
     }

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6751" systemVersion="14C1510" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="vXZ-lx-hvc">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6751" systemVersion="14C1510" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="tC8-mu-amR">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6736"/>
     </dependencies>
@@ -25,7 +25,7 @@
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <segue destination="gof-qS-tEW" kind="show" id="a92-Vx-VmA"/>
+                                    <segue destination="gof-qS-tEW" kind="show" id="kPh-IH-iJY"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -35,10 +35,11 @@
                             <constraint firstItem="Ffm-oB-gUO" firstAttribute="centerX" secondItem="kh9-bI-dsS" secondAttribute="centerX" id="meE-Nq-Ogg"/>
                         </constraints>
                     </view>
+                    <navigationItem key="navigationItem" id="88P-fH-rcC"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="263" y="346"/>
+            <point key="canvasLocation" x="1075" y="346"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="dDb-Id-9HJ">
@@ -88,7 +89,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Zpz-k1-pyA" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="991" y="339"/>
+            <point key="canvasLocation" x="1818" y="346"/>
         </scene>
         <!--Load Player View Controller-->
         <scene sceneID="hLE-bK-Dw5">
@@ -117,12 +118,6 @@
                                     <segue destination="r7z-4W-NMD" kind="show" id="uR4-4N-d6b"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="J88-b5-5iP">
-                                <rect key="frame" x="254" y="465" width="93" height="30"/>
-                                <state key="normal" title="Create Player">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                            </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0Gy-c8-AAK">
                                 <rect key="frame" x="278" y="427" width="44" height="30"/>
                                 <state key="normal" title="Delete">
@@ -146,8 +141,6 @@
                             <constraint firstItem="2gN-oS-OuL" firstAttribute="top" secondItem="wjd-uI-wx4" secondAttribute="bottom" constant="8" symbolic="YES" id="8NA-92-EAQ"/>
                             <constraint firstItem="0Gy-c8-AAK" firstAttribute="top" secondItem="2gN-oS-OuL" secondAttribute="bottom" constant="8" symbolic="YES" id="Ka6-xu-1yd"/>
                             <constraint firstItem="Xo5-Hw-Ptc" firstAttribute="centerX" secondItem="wjd-uI-wx4" secondAttribute="centerX" id="M5h-gE-nTr"/>
-                            <constraint firstItem="J88-b5-5iP" firstAttribute="top" secondItem="0Gy-c8-AAK" secondAttribute="bottom" constant="8" symbolic="YES" id="WEx-M9-xlx"/>
-                            <constraint firstItem="J88-b5-5iP" firstAttribute="centerX" secondItem="2gN-oS-OuL" secondAttribute="centerX" id="fXQ-n2-Pbs"/>
                             <constraint firstItem="wjd-uI-wx4" firstAttribute="centerY" secondItem="Jca-95-JoV" secondAttribute="centerY" id="gcE-K8-em0"/>
                             <constraint firstItem="Xo5-Hw-Ptc" firstAttribute="top" secondItem="wjd-uI-wx4" secondAttribute="top" id="sbY-f7-cEH"/>
                             <constraint firstItem="0Gy-c8-AAK" firstAttribute="centerX" secondItem="2gN-oS-OuL" secondAttribute="centerX" id="vZb-hG-6uV"/>
@@ -155,6 +148,8 @@
                             <constraint firstItem="wjd-uI-wx4" firstAttribute="centerX" secondItem="2gN-oS-OuL" secondAttribute="centerX" id="zwP-85-0c4"/>
                         </constraints>
                     </view>
+                    <toolbarItems/>
+                    <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="loadButton" destination="2gN-oS-OuL" id="GXO-4V-ruh"/>
                         <outlet property="noSavedPlayersLabel" destination="Xo5-Hw-Ptc" id="Haq-Jf-qeb"/>
@@ -163,7 +158,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="wAJ-Pg-sUz" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1741" y="339"/>
+            <point key="canvasLocation" x="2509" y="346"/>
         </scene>
         <!--New Game View Controller-->
         <scene sceneID="a18-PC-m7a">
@@ -201,7 +196,7 @@
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <segue destination="Yob-9e-A1p" kind="show" id="0Vr-D4-veD"/>
+                                    <segue destination="Yob-9e-A1p" kind="show" identifier="easy" id="0Vr-D4-veD"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uGv-lN-p8t">
@@ -210,7 +205,7 @@
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <segue destination="Yob-9e-A1p" kind="show" id="R7l-lC-URh"/>
+                                    <segue destination="Yob-9e-A1p" kind="show" identifier="hard" id="R7l-lC-URh"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="I9k-aK-e2g">
@@ -219,7 +214,7 @@
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <segue destination="Yob-9e-A1p" kind="show" id="91c-c8-osw"/>
+                                    <segue destination="Yob-9e-A1p" kind="show" identifier="medium" id="91c-c8-osw"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -247,7 +242,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gao-Xl-gTO" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1741" y="1072"/>
+            <point key="canvasLocation" x="1756" y="1077"/>
         </scene>
         <!--Board View Controller-->
         <scene sceneID="MoE-EA-TRE">
@@ -1358,11 +1353,29 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="CJ6-0W-iqz" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="991" y="1049"/>
+            <point key="canvasLocation" x="1006" y="1077"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="V7y-qj-mIb">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="tC8-mu-amR" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="bOk-ui-bmN">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="vXZ-lx-hvc" kind="relationship" relationship="rootViewController" id="08W-To-BEq"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="m14-RG-mqi" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="263" y="346"/>
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
         <segue reference="uR4-4N-d6b"/>
-        <segue reference="0Vr-D4-veD"/>
+        <segue reference="R7l-lC-URh"/>
     </inferredMetricsTieBreakers>
 </document>
