@@ -34,8 +34,4 @@ class GameBoardViewController: UIViewController, UITextFieldDelegate {
         self.view.endEditing(true)
     }
     
-    func textField(textField: UITextField, shouldChangeCharactersInRange range: NSRange, replacementString string: String) -> Bool {
-        let newLength = countElements(textField.text) + countElements(string) - range.length
-        return newLength <= 1 // Bool
-    }
 }
