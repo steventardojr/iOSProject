@@ -133,7 +133,7 @@
                                     <constraint firstAttribute="width" constant="140" id="spn-Dv-aDh"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
@@ -207,13 +207,13 @@
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="WIN/LOSS: 0/0" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Sc2-jZ-ZTJ">
                                 <rect key="frame" x="241" y="162" width="118" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="WIN PERCENTAGE: 0%" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qZY-Ga-zRZ">
                                 <rect key="frame" x="208" y="191" width="185" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
@@ -240,10 +240,10 @@
             </objects>
             <point key="canvasLocation" x="1756" y="1077"/>
         </scene>
-        <!--Board View Controller-->
+        <!--Game Board View Controller-->
         <scene sceneID="MoE-EA-TRE">
             <objects>
-                <viewController modalTransitionStyle="crossDissolve" id="Yob-9e-A1p" customClass="BoardViewController" customModule="Super_Fun_Sudoku" sceneMemberID="viewController">
+                <viewController modalTransitionStyle="crossDissolve" id="Yob-9e-A1p" customClass="GameBoardViewController" customModule="Super_Fun_Sudoku" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="SCg-Z1-CWO"/>
                         <viewControllerLayoutGuide type="bottom" id="sef-qr-z0v"/>
@@ -1276,6 +1276,89 @@
                             </mask>
                         </variation>
                     </view>
+                    <connections>
+                        <outletCollection property="boardRow1" destination="uph-kp-Ci5" collectionClass="NSMutableArray" id="5hP-gX-eOe"/>
+                        <outletCollection property="boardRow1" destination="8yL-eu-SBK" collectionClass="NSMutableArray" id="EoH-Nw-4oG"/>
+                        <outletCollection property="boardRow1" destination="b9v-kk-lcv" collectionClass="NSMutableArray" id="a2y-4w-CLP"/>
+                        <outletCollection property="boardRow1" destination="Wpe-Qv-E5h" collectionClass="NSMutableArray" id="vSw-eR-1Mr"/>
+                        <outletCollection property="boardRow1" destination="aYZ-91-KzU" collectionClass="NSMutableArray" id="Un0-25-GJL"/>
+                        <outletCollection property="boardRow1" destination="Sne-Zt-y9L" collectionClass="NSMutableArray" id="IAx-zJ-5IJ"/>
+                        <outletCollection property="boardRow1" destination="W6v-dd-pgE" collectionClass="NSMutableArray" id="n4Q-BD-ect"/>
+                        <outletCollection property="boardRow1" destination="tXE-6y-xPS" collectionClass="NSMutableArray" id="uwz-CI-oGw"/>
+                        <outletCollection property="boardRow1" destination="yha-3C-8rD" collectionClass="NSMutableArray" id="6fs-Ik-OAg"/>
+                        <outletCollection property="boardRow2" destination="SK8-XN-dik" collectionClass="NSMutableArray" id="fFF-Mk-FRe"/>
+                        <outletCollection property="boardRow2" destination="gxW-RM-xiK" collectionClass="NSMutableArray" id="DN4-mL-Uab"/>
+                        <outletCollection property="boardRow2" destination="msq-yP-L1F" collectionClass="NSMutableArray" id="E2U-VY-Me5"/>
+                        <outletCollection property="boardRow2" destination="iB5-Yl-PZe" collectionClass="NSMutableArray" id="8aJ-bp-gir"/>
+                        <outletCollection property="boardRow2" destination="1sI-mu-gCK" collectionClass="NSMutableArray" id="7aO-oe-nHE"/>
+                        <outletCollection property="boardRow2" destination="mYN-NQ-IWP" collectionClass="NSMutableArray" id="eY4-Wi-y6L"/>
+                        <outletCollection property="boardRow2" destination="6zN-hF-7HP" collectionClass="NSMutableArray" id="INC-v8-2bO"/>
+                        <outletCollection property="boardRow2" destination="WiS-lW-PfC" collectionClass="NSMutableArray" id="P3f-pK-qFX"/>
+                        <outletCollection property="boardRow2" destination="EeC-DR-oKa" collectionClass="NSMutableArray" id="vdn-Ql-unV"/>
+                        <outletCollection property="boardRow3" destination="pM8-LZ-53i" collectionClass="NSMutableArray" id="ntl-U8-aR3"/>
+                        <outletCollection property="boardRow3" destination="bkn-KQ-AVc" collectionClass="NSMutableArray" id="kY3-eH-Mag"/>
+                        <outletCollection property="boardRow3" destination="9HR-ID-o2D" collectionClass="NSMutableArray" id="qzi-Vy-laB"/>
+                        <outletCollection property="boardRow3" destination="MBr-dZ-vrE" collectionClass="NSMutableArray" id="mVV-vH-pT6"/>
+                        <outletCollection property="boardRow3" destination="xpB-eH-dOx" collectionClass="NSMutableArray" id="ohl-Ki-QR9"/>
+                        <outletCollection property="boardRow3" destination="bvO-rE-Eq5" collectionClass="NSMutableArray" id="LUm-fO-2ZM"/>
+                        <outletCollection property="boardRow3" destination="hff-MS-MCQ" collectionClass="NSMutableArray" id="lHp-a3-gXR"/>
+                        <outletCollection property="boardRow3" destination="dv3-dl-MGp" collectionClass="NSMutableArray" id="KrA-1K-xYh"/>
+                        <outletCollection property="boardRow3" destination="uXZ-Ys-Ap8" collectionClass="NSMutableArray" id="QZr-8V-0Gr"/>
+                        <outletCollection property="boardRow4" destination="wM6-oR-qDK" collectionClass="NSMutableArray" id="ceX-oU-XJs"/>
+                        <outletCollection property="boardRow4" destination="rhE-wv-l9U" collectionClass="NSMutableArray" id="IMK-oS-Nka"/>
+                        <outletCollection property="boardRow4" destination="iHW-Av-mDl" collectionClass="NSMutableArray" id="BEA-ga-7FX"/>
+                        <outletCollection property="boardRow4" destination="sWj-g1-Ggr" collectionClass="NSMutableArray" id="QMG-Fy-tpY"/>
+                        <outletCollection property="boardRow4" destination="X5S-nk-lql" collectionClass="NSMutableArray" id="dOg-gI-9Cx"/>
+                        <outletCollection property="boardRow4" destination="Tr1-3h-jti" collectionClass="NSMutableArray" id="3DD-AM-OBV"/>
+                        <outletCollection property="boardRow4" destination="K1G-pe-TRH" collectionClass="NSMutableArray" id="7nV-s2-QlE"/>
+                        <outletCollection property="boardRow4" destination="Vak-qN-NOh" collectionClass="NSMutableArray" id="Oen-I3-wCP"/>
+                        <outletCollection property="boardRow4" destination="z6T-t6-ihG" collectionClass="NSMutableArray" id="BoD-WU-8Xh"/>
+                        <outletCollection property="boardRow5" destination="qir-C8-8qF" collectionClass="NSMutableArray" id="hsW-H7-Slj"/>
+                        <outletCollection property="boardRow5" destination="U0O-0i-rMc" collectionClass="NSMutableArray" id="1ZX-1S-8HR"/>
+                        <outletCollection property="boardRow5" destination="cl4-0b-0k6" collectionClass="NSMutableArray" id="EjI-RK-fft"/>
+                        <outletCollection property="boardRow5" destination="HXp-cj-YfG" collectionClass="NSMutableArray" id="0hz-lY-MBZ"/>
+                        <outletCollection property="boardRow5" destination="OAk-ZJ-JEf" collectionClass="NSMutableArray" id="iLg-R1-IOo"/>
+                        <outletCollection property="boardRow5" destination="HBe-pj-Ua3" collectionClass="NSMutableArray" id="14J-2u-E5e"/>
+                        <outletCollection property="boardRow5" destination="Q2p-hy-8kz" collectionClass="NSMutableArray" id="hoM-cN-U0f"/>
+                        <outletCollection property="boardRow5" destination="t9X-eL-fIb" collectionClass="NSMutableArray" id="MC9-MA-q1R"/>
+                        <outletCollection property="boardRow5" destination="ZY2-3D-Vww" collectionClass="NSMutableArray" id="m5O-cS-tKc"/>
+                        <outletCollection property="boardRow6" destination="NeK-uH-Xuo" collectionClass="NSMutableArray" id="lAh-he-fSV"/>
+                        <outletCollection property="boardRow6" destination="ZMB-Uo-aPW" collectionClass="NSMutableArray" id="NPH-FJ-vPS"/>
+                        <outletCollection property="boardRow6" destination="LXI-Ff-LTu" collectionClass="NSMutableArray" id="5XD-SJ-ZKJ"/>
+                        <outletCollection property="boardRow6" destination="8Mx-1x-s7M" collectionClass="NSMutableArray" id="Q94-Fb-ryV"/>
+                        <outletCollection property="boardRow6" destination="HfO-Zp-4nq" collectionClass="NSMutableArray" id="RV2-zL-dtj"/>
+                        <outletCollection property="boardRow6" destination="YPt-IS-H7O" collectionClass="NSMutableArray" id="tYZ-dq-WlB"/>
+                        <outletCollection property="boardRow6" destination="g1m-1f-k9Q" collectionClass="NSMutableArray" id="J8a-Sm-7lS"/>
+                        <outletCollection property="boardRow6" destination="SnP-a5-OJf" collectionClass="NSMutableArray" id="34H-2U-aoZ"/>
+                        <outletCollection property="boardRow6" destination="xtP-mP-5TF" collectionClass="NSMutableArray" id="aDR-NL-Jif"/>
+                        <outletCollection property="boardRow7" destination="eLr-Ve-PGX" collectionClass="NSMutableArray" id="V65-rU-yyP"/>
+                        <outletCollection property="boardRow7" destination="0uN-7B-jmd" collectionClass="NSMutableArray" id="B9d-RQ-Ab9"/>
+                        <outletCollection property="boardRow7" destination="gRG-YY-csK" collectionClass="NSMutableArray" id="I9c-o7-PVE"/>
+                        <outletCollection property="boardRow7" destination="oDH-ax-2Hf" collectionClass="NSMutableArray" id="KnQ-M3-Zed"/>
+                        <outletCollection property="boardRow7" destination="pt5-N4-wMh" collectionClass="NSMutableArray" id="7zm-gr-taO"/>
+                        <outletCollection property="boardRow7" destination="XLv-md-UOh" collectionClass="NSMutableArray" id="vgS-mC-q2M"/>
+                        <outletCollection property="boardRow7" destination="LyP-DI-CwW" collectionClass="NSMutableArray" id="8qd-7r-aJy"/>
+                        <outletCollection property="boardRow7" destination="LUl-dk-Wk9" collectionClass="NSMutableArray" id="kcF-DV-fw2"/>
+                        <outletCollection property="boardRow7" destination="hnO-5q-8eS" collectionClass="NSMutableArray" id="OEh-4Z-4hf"/>
+                        <outletCollection property="boardRow8" destination="p6i-Wa-Q7K" collectionClass="NSMutableArray" id="MmP-V7-fdP"/>
+                        <outletCollection property="boardRow8" destination="jAH-Qz-jkI" collectionClass="NSMutableArray" id="gFn-3S-CgB"/>
+                        <outletCollection property="boardRow8" destination="Yp4-bD-U0d" collectionClass="NSMutableArray" id="tnD-71-ODS"/>
+                        <outletCollection property="boardRow8" destination="gqN-cN-hqv" collectionClass="NSMutableArray" id="ZKY-E2-N7F"/>
+                        <outletCollection property="boardRow8" destination="gvI-Lw-dgR" collectionClass="NSMutableArray" id="10r-Sl-jea"/>
+                        <outletCollection property="boardRow8" destination="JDB-PC-f3J" collectionClass="NSMutableArray" id="fos-z4-5tX"/>
+                        <outletCollection property="boardRow8" destination="IMJ-62-geg" collectionClass="NSMutableArray" id="T6L-Pi-nDN"/>
+                        <outletCollection property="boardRow8" destination="qyp-oo-l4J" collectionClass="NSMutableArray" id="A9f-YW-5wV"/>
+                        <outletCollection property="boardRow8" destination="fAG-2b-qDM" collectionClass="NSMutableArray" id="rog-f6-JFs"/>
+                        <outletCollection property="boardRow9" destination="ZcY-af-eMS" collectionClass="NSMutableArray" id="bUR-eB-rNe"/>
+                        <outletCollection property="boardRow9" destination="NFe-0k-rI5" collectionClass="NSMutableArray" id="Lvm-aK-9ha"/>
+                        <outletCollection property="boardRow9" destination="wdi-3f-Qru" collectionClass="NSMutableArray" id="HLU-kZ-whE"/>
+                        <outletCollection property="boardRow9" destination="fPG-kR-gub" collectionClass="NSMutableArray" id="LnG-tc-bLo"/>
+                        <outletCollection property="boardRow9" destination="uMl-Mt-NzT" collectionClass="NSMutableArray" id="XZ3-ZL-lAw"/>
+                        <outletCollection property="boardRow9" destination="xVT-ud-oNs" collectionClass="NSMutableArray" id="6Kz-aZ-tXj"/>
+                        <outletCollection property="boardRow9" destination="xVB-iE-G9t" collectionClass="NSMutableArray" id="bpd-Sq-Q4J"/>
+                        <outletCollection property="boardRow9" destination="Sun-xk-NeS" collectionClass="NSMutableArray" id="J6A-OM-80B"/>
+                        <outletCollection property="boardRow9" destination="XXa-dC-YM1" collectionClass="NSMutableArray" id="adF-UU-0wz"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="LwT-bg-gvf" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -1316,7 +1399,7 @@
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Enter your name:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5kT-CR-mUK">
                                 <rect key="frame" x="235" y="256" width="131" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kdo-Zj-c92">
@@ -1326,7 +1409,7 @@
                                     <constraint firstAttribute="width" constant="270" id="hLr-z8-ACy"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
