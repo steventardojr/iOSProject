@@ -9,7 +9,6 @@
 import UIKit
 
 class NewGameViewController: UIViewController {
-    @IBOutlet var playerLabel: UILabel!
     @IBOutlet var winLoss: UILabel!
     @IBOutlet var winPercent: UILabel!
     
@@ -18,7 +17,7 @@ class NewGameViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
-        playerLabel.text = playerModel.getPlayerName()
+        navigationItem.title = playerModel.getPlayerName()
         winLoss.text = "WIN/LOSS: \(playerModel.getWins())/\(playerModel.getLosses())"
         var winPercentage = 0
         if (playerModel.getLosses() == 0) {

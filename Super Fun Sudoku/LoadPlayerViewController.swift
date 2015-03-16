@@ -12,9 +12,11 @@ class LoadPlayerViewController: UIViewController,UIPickerViewDataSource,UIPicker
     let playerModel = PlayerModel()
     var players: [String]!
     var selectedPlayer: String!
+    var arrayIndex: Int!
     @IBOutlet var loadButton: UIButton!
     @IBOutlet var picker: UIPickerView!
     @IBOutlet var noSavedPlayersLabel: UILabel!
+    @IBOutlet var deleteButton: UIButton!
    
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -23,10 +25,8 @@ class LoadPlayerViewController: UIViewController,UIPickerViewDataSource,UIPicker
         players = playerModel.getPlayerList()
         picker.dataSource = self
         picker.delegate = self
-        if playerModel.getPlayerList().isEmpty {
-            loadButton.enabled = false
-            noSavedPlayersLabel.text = "No Saved Players"
-        }
+        playerListIsEmpty()
+        navigationItem.title = "Load Player"
     }
 
     override func didReceiveMemoryWarning() {
@@ -53,11 +53,31 @@ class LoadPlayerViewController: UIViewController,UIPickerViewDataSource,UIPicker
     }
     
     func pickerView(pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String! {
+        arrayIndex = row
         return players[row]
     }
     
     func pickerView(pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
         selectedPlayer = players[row]
+        arrayIndex = row
     }
     
+    func playerListIsEmpty() {
+        if playerModel.getPlayerList().isEmpty {
+            loadButton.enabled = false
+            deleteButton.enabled = false
+            noSavedPlayersLabel.text = "No Saved Players"
+        }
+    }
+    
+    @IBAction func deleteButtonPush(sender: UIButton) {
+        if selectedPlayer == nil {
+            selectedPlayer = players[0]
+        }
+        playerModel.removeUserDefaults(selectedPlayer, indexForArray: arrayIndex)
+        players = playerModel.getPlayerList()
+        picker.reloadAllComponents()
+        playerListIsEmpty()
+    }
+
 }

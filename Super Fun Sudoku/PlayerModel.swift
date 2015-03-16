@@ -75,4 +75,13 @@ class PlayerModel {
         loss = userDefaults.integerForKey("\(self.playerName)loss")
         players = userDefaults.objectForKey("players") as [String]
     }
+    
+    func removeUserDefaults(playerToRemove: String, indexForArray: Int) {
+        let userDefaults = NSUserDefaults.standardUserDefaults()
+        userDefaults.removeObjectForKey(playerToRemove)
+        userDefaults.integerForKey("\(playerToRemove)win")
+        userDefaults.integerForKey("\(playerToRemove)loss")
+        self.players.removeAtIndex(indexForArray)
+        userDefaults.setObject(self.players as Array, forKey: "players")
+    }
 }

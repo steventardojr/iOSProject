@@ -17,8 +17,8 @@ class NewPlayerViewController: UIViewController, UITextFieldDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
-        
         playerName.delegate = self
+        navigationItem.title = "Create New Player"
     }
     
     override func didReceiveMemoryWarning() {
