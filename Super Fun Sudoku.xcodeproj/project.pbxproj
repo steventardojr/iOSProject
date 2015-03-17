@@ -88,12 +88,12 @@
 			isa = PBXGroup;
 			children = (
 				B0E521E71A87E1940044BE1A /* AppDelegate.swift */,
-				B0E521E91A87E1940044BE1A /* ViewController.swift */,
 				B01597781AB53A7E0034C8E4 /* Main.storyboard */,
-				B0CC88D31AB4034C0030059C /* NewPlayerViewController.swift */,
 				B076B9B71AB4C364004325A3 /* PlayerModel.swift */,
-				B0CC88D11AB403090030059C /* NewGameViewController.swift */,
+				B0E521E91A87E1940044BE1A /* ViewController.swift */,
+				B0CC88D31AB4034C0030059C /* NewPlayerViewController.swift */,
 				B076B9B91AB4F39B004325A3 /* LoadPlayerViewController.swift */,
+				B0CC88D11AB403090030059C /* NewGameViewController.swift */,
 				B0BE01FE1AB6637C006F2833 /* GameBoardViewController.swift */,
 				B0E521EE1A87E1940044BE1A /* Images.xcassets */,
 				B0E521F01A87E1940044BE1A /* LaunchScreen.xib */,

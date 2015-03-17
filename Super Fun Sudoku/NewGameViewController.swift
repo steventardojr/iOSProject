@@ -19,10 +19,10 @@ class NewGameViewController: UIViewController {
         // Do any additional setup after loading the view, typically from a nib.
         welcomeLabel.text = "Welcome, \(playerModel.getPlayerName())"
         winLoss.text = "NUMBER OF WINS/LOSSES: \(playerModel.getWins())/\(playerModel.getLosses())"
-        if (playerModel.getLosses() == 0 && playerModel.getWins() != 0) {
-            winPercent.text = "WIN/LOSS RATIO: 1.00"
+        if (playerModel.getWins() != 0 && playerModel.getLosses() == 0) {
+            winPercent.text = "WIN/LOSS RATIO: ∞"
         }
-        else if (playerModel.getWins() == 0) {
+        else if (playerModel.getWins() == 0 && playerModel.getLosses() == 0) {
             winPercent.text = "WIN/LOSS RATIO: 0.00"
         }
         else {
@@ -40,10 +40,10 @@ class NewGameViewController: UIViewController {
     override func viewDidAppear(animated: Bool) {
         welcomeLabel.text = "Welcome, \(playerModel.getPlayerName())"
         winLoss.text = "NUMBER OF WINS/LOSSES: \(playerModel.getWins())/\(playerModel.getLosses())"
-        if (playerModel.getLosses() == 0 && playerModel.getWins() != 0) {
-            winPercent.text = "WIN/LOSS RATIO: 1.00"
+        if (playerModel.getWins() != 0 && playerModel.getLosses() == 0) {
+            winPercent.text = "WIN/LOSS RATIO: ∞"
         }
-        else if (playerModel.getWins() == 0) {
+        else if (playerModel.getWins() == 0 && playerModel.getLosses() == 0) {
             winPercent.text = "WIN/LOSS RATIO: 0.00"
         }
         else {
