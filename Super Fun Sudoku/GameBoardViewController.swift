@@ -18,6 +18,8 @@ class GameBoardViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet var boardRow7: [UITextField]!
     @IBOutlet var boardRow8: [UITextField]!
     @IBOutlet var boardRow9: [UITextField]!
+    @IBOutlet var winLabel: UILabel!
+    var playerModel: PlayerModel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -39,6 +41,16 @@ class GameBoardViewController: UIViewController, UITextFieldDelegate {
     
     override func touchesBegan(touches: NSSet, withEvent event: UIEvent) {
         self.view.endEditing(true)
+        if boardRow1[0].text == "5" {
+            winLabel.text = "You Win!"
+            playerModel.setWins(playerModel.getWins() + 1)
+        }
+    }
+    
+    override func viewDidDisappear(animated: Bool) {
+        if winLabel.text != "You Win!" {
+            playerModel.setLosses(playerModel.getLosses() + 1)
+        }
     }
     
     func textFieldDidBeginEditing(textField: UITextField) {

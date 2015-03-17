@@ -12,7 +12,6 @@ class NewGameViewController: UIViewController {
     @IBOutlet var welcomeLabel: UILabel!
     @IBOutlet var winLoss: UILabel!
     @IBOutlet var winPercent: UILabel!
-    
     var playerModel: PlayerModel!
     
     override func viewDidLoad() {
@@ -24,13 +23,31 @@ class NewGameViewController: UIViewController {
             winPercent.text = "WIN PERCENTAGE: 100%"
         }
         else {
-            winPercent.text = "WIN PERCENTAGE: \(playerModel.getWins()/playerModel.getLosses()*100)%"
+            var winDouble = Int(Double(playerModel.getWins())/Double(playerModel.getLosses())*100)
+            winPercent.text = "WIN PERCENTAGE: \(winDouble)%"
         }
     }
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    
+    override func viewDidAppear(animated: Bool) {
+        welcomeLabel.text = "Welcome, \(playerModel.getPlayerName())"
+        winLoss.text = "WIN/LOSS: \(playerModel.getWins())/\(playerModel.getLosses())"
+        if (playerModel.getLosses() == 0) {
+            winPercent.text = "WIN PERCENTAGE: 100%"
+        }
+        else {
+            var winDouble = Int(Double(playerModel.getWins())/Double(playerModel.getLosses())*100)
+            winPercent.text = "WIN PERCENTAGE: \(winDouble)%"
+        }
+    }
+    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        var destinationVC = segue.destinationViewController as GameBoardViewController
+        destinationVC.playerModel = playerModel
     }
     
 }

@@ -16,7 +16,7 @@ class PlayerModel {
     
     init() {
         self.playerName = ""
-        self.win = 1
+        self.win = 0
         self.loss = 0
         let userDefaults = NSUserDefaults.standardUserDefaults()
         if userDefaults.objectForKey("players") == nil {
@@ -44,37 +44,33 @@ class PlayerModel {
         if !(contains(self.players, newPlayerName)) {
             self.players += [self.playerName]
         }
-        setUserDefaults()
+        let userDefaults = NSUserDefaults.standardUserDefaults()
+        userDefaults.setObject(self.playerName as String, forKey: self.playerName)
+        userDefaults.setObject(self.players as Array, forKey: "players")
     }
     
     func setWins(newWins: Int) {
         self.win = newWins
-        setUserDefaults()
+        let userDefaults = NSUserDefaults.standardUserDefaults()
+        userDefaults.setInteger(self.win, forKey: "\(self.playerName)win")
     }
     
     func setLosses(newLosses: Int) {
+        let userDefaults = NSUserDefaults.standardUserDefaults()
         self.loss = newLosses
-        setUserDefaults()
+        userDefaults.setInteger(self.loss, forKey: "\(self.playerName)loss")
     }
     
     func getPlayerList() -> [String] {
         return self.players
     }
     
-    func setUserDefaults() {
-        let userDefaults = NSUserDefaults.standardUserDefaults()
-        userDefaults.setObject(self.playerName as String, forKey: self.playerName)
-        userDefaults.setInteger(self.win, forKey: "\(playerName)win")
-        userDefaults.setInteger(self.loss, forKey: "\(playerName)loss")
-        userDefaults.setObject(self.players as Array, forKey: "players")
-    }
-    
     func getUserDefaults() {
         let userDefaults = NSUserDefaults.standardUserDefaults()
-        playerName = userDefaults.objectForKey(self.playerName) as String
-        win = userDefaults.integerForKey("\(self.playerName)win")
-        loss = userDefaults.integerForKey("\(self.playerName)loss")
-        players = userDefaults.objectForKey("players") as [String]
+        self.playerName = userDefaults.objectForKey(self.playerName) as String
+        self.win = userDefaults.integerForKey("\(self.playerName)win")
+        self.loss = userDefaults.integerForKey("\(self.playerName)loss")
+        self.players = userDefaults.objectForKey("players") as [String]
     }
     
     func removeUserDefaults(playerToRemove: String, indexForArray: Int) {
