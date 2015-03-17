@@ -9,6 +9,7 @@
 import UIKit
 
 class NewGameViewController: UIViewController {
+    @IBOutlet var welcomeLabel: UILabel!
     @IBOutlet var winLoss: UILabel!
     @IBOutlet var winPercent: UILabel!
     
@@ -17,17 +18,14 @@ class NewGameViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
-        navigationItem.title = playerModel.getPlayerName()
+        welcomeLabel.text = "Welcome, \(playerModel.getPlayerName())"
         winLoss.text = "WIN/LOSS: \(playerModel.getWins())/\(playerModel.getLosses())"
-        var winPercentage = 0
         if (playerModel.getLosses() == 0) {
-            winPercentage = 100
+            winPercent.text = "WIN PERCENTAGE: 100%"
         }
         else {
-            winPercentage = playerModel.getWins()/playerModel.getLosses()*100
+            winPercent.text = "WIN PERCENTAGE: \(playerModel.getWins()/playerModel.getLosses()*100)%"
         }
-        winPercent.text = "WIN PERCENTAGE: \(winPercentage)%"
-        playerModel.setWins(playerModel.getWins() + 5)
     }
     
     override func didReceiveMemoryWarning() {

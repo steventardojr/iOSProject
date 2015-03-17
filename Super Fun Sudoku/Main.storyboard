@@ -216,6 +216,12 @@
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Welcome" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="giG-SL-xU3">
+                                <rect key="frame" x="0.0" y="133" width="600" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
@@ -224,14 +230,18 @@
                             <constraint firstItem="qZY-Ga-zRZ" firstAttribute="centerX" secondItem="I9k-aK-e2g" secondAttribute="centerX" id="1pQ-6d-xJ4"/>
                             <constraint firstItem="Sc2-jZ-ZTJ" firstAttribute="centerX" secondItem="qZY-Ga-zRZ" secondAttribute="centerX" id="6Mk-nd-8I9"/>
                             <constraint firstItem="qZY-Ga-zRZ" firstAttribute="top" secondItem="Sc2-jZ-ZTJ" secondAttribute="bottom" constant="8" symbolic="YES" id="8Ko-26-00E"/>
+                            <constraint firstItem="giG-SL-xU3" firstAttribute="leading" secondItem="Hli-We-Sm9" secondAttribute="leading" id="CLb-Df-h7X"/>
                             <constraint firstItem="I9k-aK-e2g" firstAttribute="centerX" secondItem="Hli-We-Sm9" secondAttribute="centerX" id="L4t-MG-G1n"/>
                             <constraint firstItem="I9k-aK-e2g" firstAttribute="baseline" secondItem="uGv-lN-p8t" secondAttribute="baseline" id="dLO-GI-lxz"/>
                             <constraint firstItem="I9k-aK-e2g" firstAttribute="baseline" secondItem="gSC-K5-Zcb" secondAttribute="baseline" id="hhp-q7-bbr"/>
+                            <constraint firstItem="giG-SL-xU3" firstAttribute="centerX" secondItem="Sc2-jZ-ZTJ" secondAttribute="centerX" id="i4V-iV-BiS"/>
                             <constraint firstItem="gSC-K5-Zcb" firstAttribute="centerY" secondItem="Hli-We-Sm9" secondAttribute="centerY" id="nxe-o7-S6X"/>
+                            <constraint firstItem="Sc2-jZ-ZTJ" firstAttribute="top" secondItem="giG-SL-xU3" secondAttribute="bottom" constant="8" symbolic="YES" id="p0c-Ag-Ezw"/>
                             <constraint firstItem="uGv-lN-p8t" firstAttribute="leading" secondItem="I9k-aK-e2g" secondAttribute="trailing" constant="51" id="pUA-5g-iLN"/>
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="welcomeLabel" destination="giG-SL-xU3" id="Zrs-ZL-GV8"/>
                         <outlet property="winLoss" destination="Sc2-jZ-ZTJ" id="s28-lf-iSR"/>
                         <outlet property="winPercent" destination="qZY-Ga-zRZ" id="boq-5X-zd0"/>
                     </connections>

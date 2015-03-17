@@ -29,6 +29,7 @@ class NewPlayerViewController: UIViewController, UITextFieldDelegate {
     @IBAction func okButtonPushed(sender: UIButton) {
         if !(contains(playerModel.getPlayerList(), playerName.text)) {
             playerName.resignFirstResponder()
+            nameAlreadyTakenLabel.text = ""
         }
         else {
             nameAlreadyTakenLabel.text = "That name has already been taken."
@@ -38,6 +39,7 @@ class NewPlayerViewController: UIViewController, UITextFieldDelegate {
     func textFieldShouldReturn(textField: UITextField!) -> Bool {
         if !(contains(playerModel.getPlayerList(), playerName.text)) {
             playerName.resignFirstResponder()
+            nameAlreadyTakenLabel.text = ""
             return true
         }
         else {
@@ -46,9 +48,14 @@ class NewPlayerViewController: UIViewController, UITextFieldDelegate {
         }
     }
     
+    func textFieldDidBeginEditing(textField: UITextField) {
+        textField.selectedTextRange = textField.textRangeFromPosition(textField.beginningOfDocument, toPosition: textField.endOfDocument)
+    }
+    
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         var destinationVC = segue.destinationViewController as NewGameViewController
         playerModel.setPlayerName(playerName.text)
         destinationVC.playerModel = playerModel
     }
+    
 }
