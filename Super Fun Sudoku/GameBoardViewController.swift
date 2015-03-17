@@ -22,32 +22,13 @@ class GameBoardViewController: UIViewController, UITextFieldDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
+        var boardRow = [boardRow1, boardRow2, boardRow3, boardRow4, boardRow5, boardRow6, boardRow7, boardRow8, boardRow9]
         for i in 0...8 {
-            boardRow1[i].delegate = self
-        }
-        for i in 0...8 {
-            boardRow2[i].delegate = self
-        }
-        for i in 0...8 {
-            boardRow3[i].delegate = self
-        }
-        for i in 0...8 {
-            boardRow4[i].delegate = self
-        }
-        for i in 0...8 {
-            boardRow5[i].delegate = self
-        }
-        for i in 0...8 {
-            boardRow6[i].delegate = self
-        }
-        for i in 0...8 {
-            boardRow7[i].delegate = self
-        }
-        for i in 0...8 {
-            boardRow8[i].delegate = self
-        }
-        for i in 0...8 {
-            boardRow9[i].delegate = self
+            var tempBoardRow = boardRow[i]
+            for j in 0...8 {
+                tempBoardRow[j].delegate = self
+            }
+            boardRow[i] = tempBoardRow
         }
     }
     
