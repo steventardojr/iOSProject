@@ -18,13 +18,17 @@ class NewGameViewController: UIViewController {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         welcomeLabel.text = "Welcome, \(playerModel.getPlayerName())"
-        winLoss.text = "WIN/LOSS: \(playerModel.getWins())/\(playerModel.getLosses())"
-        if (playerModel.getLosses() == 0) {
-            winPercent.text = "WIN PERCENTAGE: 100%"
+        winLoss.text = "NUMBER OF WINS/LOSSES: \(playerModel.getWins())/\(playerModel.getLosses())"
+        if (playerModel.getLosses() == 0 && playerModel.getWins() != 0) {
+            winPercent.text = "WIN/LOSS RATIO: 1.00"
+        }
+        else if (playerModel.getWins() == 0) {
+            winPercent.text = "WIN/LOSS RATIO: 0.00"
         }
         else {
-            var winDouble = Int(Double(playerModel.getWins())/Double(playerModel.getLosses())*100)
-            winPercent.text = "WIN PERCENTAGE: \(winDouble)%"
+            var winDouble = (Double(playerModel.getWins())/Double(playerModel.getLosses()))
+            var winString: String = String(format: "%.2f", winDouble)
+            winPercent.text = "WIN/LOSS RATIO: \(winString)"
         }
     }
     
@@ -35,13 +39,17 @@ class NewGameViewController: UIViewController {
     
     override func viewDidAppear(animated: Bool) {
         welcomeLabel.text = "Welcome, \(playerModel.getPlayerName())"
-        winLoss.text = "WIN/LOSS: \(playerModel.getWins())/\(playerModel.getLosses())"
-        if (playerModel.getLosses() == 0) {
-            winPercent.text = "WIN PERCENTAGE: 100%"
+        winLoss.text = "NUMBER OF WINS/LOSSES: \(playerModel.getWins())/\(playerModel.getLosses())"
+        if (playerModel.getLosses() == 0 && playerModel.getWins() != 0) {
+            winPercent.text = "WIN/LOSS RATIO: 1.00"
+        }
+        else if (playerModel.getWins() == 0) {
+            winPercent.text = "WIN/LOSS RATIO: 0.00"
         }
         else {
-            var winDouble = Int(Double(playerModel.getWins())/Double(playerModel.getLosses())*100)
-            winPercent.text = "WIN PERCENTAGE: \(winDouble)%"
+            var winDouble = (Double(playerModel.getWins())/Double(playerModel.getLosses()))
+            var winString: String = String(format: "%.2f", winDouble)
+            winPercent.text = "WIN/LOSS RATIO: \(winString)"
         }
     }
     
