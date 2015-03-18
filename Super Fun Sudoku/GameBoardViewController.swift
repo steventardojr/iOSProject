@@ -143,148 +143,148 @@ class GameBoardViewController: UIViewController, UITextFieldDelegate {
     }
     
     func checkForWin() {
-        var didWin = true
+        var didWin: Bool = true
         
-        if boardRow1[0] != "8" {
+        if boardRow1[0].text != "8" {
             didWin = false
         }
-        if boardRow1[3] != "5" {
+        if boardRow1[3].text != "5" {
             didWin = false
         }
-        if boardRow1[7] != "1" {
+        if boardRow1[7].text != "1" {
             didWin = false
         }
-        if boardRow1[8] != "9" {
+        if boardRow1[8].text != "9" {
             didWin = false
         }
-        if boardRow2[0] != "6" {
+        if boardRow2[0].text != "6" {
             didWin = false
         }
-        if boardRow2[2] != "1" {
+        if boardRow2[2].text != "1" {
             didWin = false
         }
-        if boardRow2[4] != "4" {
+        if boardRow2[4].text != "4" {
             didWin = false
         }
-        if boardRow2[5] != "2" {
+        if boardRow2[5].text != "2" {
             didWin = false
         }
-        if boardRow2[6] != "8" {
+        if boardRow2[6].text != "8" {
             didWin = false
         }
-        if boardRow3[0] != "5" {
+        if boardRow3[0].text != "5" {
             didWin = false
         }
-        if boardRow3[1] != "3" {
+        if boardRow3[1].text != "3" {
             didWin = false
         }
-        if boardRow3[2] != "4" {
+        if boardRow3[2].text != "4" {
             didWin = false
         }
-        if boardRow3[5] != "9" {
+        if boardRow3[5].text != "9" {
             didWin = false
         }
-        if boardRow3[6] != "7" {
+        if boardRow3[6].text != "7" {
             didWin = false
         }
-        if boardRow3[7] != "6" {
+        if boardRow3[7].text != "6" {
             didWin = false
         }
-        if boardRow4[1] != "8" {
+        if boardRow4[1].text != "8" {
             didWin = false
         }
-        if boardRow4[3] != "4" {
+        if boardRow4[3].text != "4" {
             didWin = false
         }
-        if boardRow4[4] != "5" {
+        if boardRow4[4].text != "5" {
             didWin = false
         }
-        if boardRow4[5] != "1" {
+        if boardRow4[5].text != "1" {
             didWin = false
         }
-        if boardRow4[6] != "3" {
+        if boardRow4[6].text != "3" {
             didWin = false
         }
-        if boardRow4[8] != "7" {
+        if boardRow4[8].text != "7" {
             didWin = false
         }
-        if boardRow5[1] != "1" {
+        if boardRow5[1].text != "1" {
             didWin = false
         }
-        if boardRow5[3] != "2" {
+        if boardRow5[3].text != "2" {
             didWin = false
         }
-        if boardRow5[5] != "7" {
+        if boardRow5[5].text != "7" {
             didWin = false
         }
-        if boardRow5[7] != "4" {
+        if boardRow5[7].text != "4" {
             didWin = false
         }
-        if boardRow6[0] != "9" {
+        if boardRow6[0].text != "9" {
             didWin = false
         }
-        if boardRow6[2] != "7" {
+        if boardRow6[2].text != "7" {
             didWin = false
         }
-        if boardRow6[3] != "3" {
+        if boardRow6[3].text != "3" {
             didWin = false
         }
-        if boardRow6[4] != "6" {
+        if boardRow6[4].text != "6" {
             didWin = false
         }
-        if boardRow6[5] != "8" {
+        if boardRow6[5].text != "8" {
             didWin = false
         }
-        if boardRow6[7] != "2" {
+        if boardRow6[7].text != "2" {
             didWin = false
         }
-        if boardRow7[1] != "6" {
+        if boardRow7[1].text != "6" {
             didWin = false
         }
-        if boardRow7[2] != "9" {
+        if boardRow7[2].text != "9" {
             didWin = false
         }
-        if boardRow7[3] != "8" {
+        if boardRow7[3].text != "8" {
             didWin = false
         }
-        if boardRow7[6] != "1" {
+        if boardRow7[6].text != "1" {
             didWin = false
         }
-        if boardRow7[7] != "5" {
+        if boardRow7[7].text != "5" {
             didWin = false
         }
-        if boardRow7[8] != "4" {
+        if boardRow7[8].text != "4" {
             didWin = false
         }
-        if boardRow8[2] != "3" {
+        if boardRow8[2].text != "3" {
             didWin = false
         }
-        if boardRow8[3] != "9" {
+        if boardRow8[3].text != "9" {
             didWin = false
         }
-        if boardRow8[4] != "7" {
+        if boardRow8[4].text != "7" {
             didWin = false
         }
-        if boardRow8[6] != "2" {
+        if boardRow8[6].text != "2" {
             didWin = false
         }
-        if boardRow8[8] != "6" {
+        if boardRow8[8].text != "6" {
             didWin = false
         }
-        if boardRow9[0] != "4" {
+        if boardRow9[0].text != "4" {
             didWin = false
         }
-        if boardRow9[1] != "2" {
+        if boardRow9[1].text != "2" {
             didWin = false
         }
-        if boardRow9[5] != "5" {
+        if boardRow9[5].text != "5" {
             didWin = false
         }
-        if boardRow9[8] != "3" {
+        if boardRow9[8].text != "3" {
             didWin = false
         }
         
-        if didWin == true {
+        if didWin {
             backLabel.text = ""
             winLabel.text = "You Win!"
             playerModel.setWins(playerModel.getWins() + 1)
