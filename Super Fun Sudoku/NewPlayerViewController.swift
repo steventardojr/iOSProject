@@ -71,11 +71,9 @@ class NewPlayerViewController: UIViewController, UITextFieldDelegate {
     }
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        if sender as? UIBarButtonItem != navigationItem.leftBarButtonItem {
             var destinationVC = segue.destinationViewController as NewGameViewController
             playerModel.setPlayerName(playerName.text)
             destinationVC.playerModel = playerModel
-        }
     }
     
 }
