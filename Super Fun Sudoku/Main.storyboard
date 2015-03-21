@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6751" systemVersion="14C1510" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="tC8-mu-amR">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6751" systemVersion="14C1514" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="tC8-mu-amR">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6736"/>
     </dependencies>
@@ -1446,11 +1446,11 @@
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kdo-Zj-c92">
-                                <rect key="frame" x="165" y="227" width="270" height="21"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kdo-Zj-c92">
+                                <rect key="frame" x="150" y="227" width="300" height="21"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="21" id="TjR-ZG-KTN"/>
-                                    <constraint firstAttribute="width" constant="270" id="hLr-z8-ACy"/>
+                                    <constraint firstAttribute="width" constant="300" id="ffW-Vp-xRv"/>
+                                    <constraint firstAttribute="height" constant="21" id="mQV-1t-gYn"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
@@ -1459,13 +1459,13 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="kdo-Zj-c92" firstAttribute="centerX" secondItem="5kT-CR-mUK" secondAttribute="centerX" id="4di-wk-Pbf"/>
-                            <constraint firstItem="5kT-CR-mUK" firstAttribute="top" secondItem="kdo-Zj-c92" secondAttribute="bottom" constant="8" symbolic="YES" id="6J3-00-X0T"/>
+                            <constraint firstItem="kdo-Zj-c92" firstAttribute="centerX" secondItem="5kT-CR-mUK" secondAttribute="centerX" id="DR9-I8-e1Y"/>
                             <constraint firstItem="eYh-P3-mFI" firstAttribute="centerY" secondItem="s06-A0-iJK" secondAttribute="centerY" id="Jo1-kP-q3x"/>
                             <constraint firstItem="4Wf-j5-WIF" firstAttribute="top" secondItem="eYh-P3-mFI" secondAttribute="bottom" constant="8" symbolic="YES" id="MAZ-ck-kfy"/>
                             <constraint firstItem="eYh-P3-mFI" firstAttribute="top" secondItem="5kT-CR-mUK" secondAttribute="bottom" constant="8" symbolic="YES" id="O4x-Xc-8gT"/>
                             <constraint firstItem="5kT-CR-mUK" firstAttribute="centerX" secondItem="s06-A0-iJK" secondAttribute="centerX" id="bci-as-zEl"/>
                             <constraint firstItem="5kT-CR-mUK" firstAttribute="centerX" secondItem="eYh-P3-mFI" secondAttribute="centerX" id="gPj-23-H3T"/>
+                            <constraint firstItem="5kT-CR-mUK" firstAttribute="top" secondItem="kdo-Zj-c92" secondAttribute="bottom" constant="8" symbolic="YES" id="n7e-R6-jvQ"/>
                             <constraint firstItem="eYh-P3-mFI" firstAttribute="centerX" secondItem="4Wf-j5-WIF" secondAttribute="centerX" id="pD3-6s-R2A"/>
                         </constraints>
                     </view>

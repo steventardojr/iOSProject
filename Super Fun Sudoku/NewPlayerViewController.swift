@@ -66,13 +66,16 @@ class NewPlayerViewController: UIViewController, UITextFieldDelegate {
     }
     
     func textFieldDidBeginEditing(textField: UITextField) {
+        // Selects all text if the UITextField is touched
         textField.selectedTextRange = textField.textRangeFromPosition(textField.beginningOfDocument, toPosition: textField.endOfDocument)
     }
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        var destinationVC = segue.destinationViewController as NewGameViewController
-        playerModel.setPlayerName(playerName.text)
-        destinationVC.playerModel = playerModel
+        if sender as? UIBarButtonItem != navigationItem.leftBarButtonItem {
+            var destinationVC = segue.destinationViewController as NewGameViewController
+            playerModel.setPlayerName(playerName.text)
+            destinationVC.playerModel = playerModel
+        }
     }
     
 }
