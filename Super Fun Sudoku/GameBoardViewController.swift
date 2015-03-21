@@ -25,6 +25,7 @@ class GameBoardViewController: UIViewController, UITextFieldDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
+        
         var boardRow = [boardRow1, boardRow2, boardRow3, boardRow4, boardRow5, boardRow6, boardRow7, boardRow8, boardRow9]
         for i in 0...8 {
             var tempBoardRow = boardRow[i]
@@ -42,25 +43,36 @@ class GameBoardViewController: UIViewController, UITextFieldDelegate {
     }
     
     override func touchesBegan(touches: NSSet, withEvent event: UIEvent) {
+        // Call check for win after a UITextField is no longer being edited
         self.view.endEditing(true)
         checkForWin()
     }
     
     override func viewDidDisappear(animated: Bool) {
+        // Add a loss is game isn't over
         if winLabel.text != "You Win!" {
             playerModel.setLosses(playerModel.getLosses() + 1)
         }
     }
     
     func textFieldDidBeginEditing(textField: UITextField) {
+        // Selects all current text
         textField.selectedTextRange = textField.textRangeFromPosition(textField.beginningOfDocument, toPosition: textField.endOfDocument)
     }
     
     func textField(textField: UITextField, shouldChangeCharactersInRange range: NSRange, replacementString string: String) -> Bool {
+        // Limits each UITextField to one character
         let maxLength = countElements(textField.text) + countElements(string) - range.length
         return maxLength <= 1
     }
     
+    /**
+    Sets up a new Sudoku game
+    
+    This method sets up a new Sudoku game by placing the
+    known values in the correct UITextFields and disabling
+    those UITextFields from being edited.
+    */
     func setUpGame() {
         boardRow1[1].text = "7"
         boardRow1[1].enabled = false
@@ -142,6 +154,16 @@ class GameBoardViewController: UIViewController, UITextFieldDelegate {
         boardRow9[7].enabled = false
     }
     
+    /**
+    Checks to see if puzzle was solved.
+    
+    This method is called after each entry in a UITextField
+    to check if the puzzle was solved. A Boolean value is
+    set to false if the puzzle was not solved. If the Boolean
+    value remains true after checking, a label is updated
+    to let the player know they won, and a win is added to the
+    value in the Player model.
+    */
     func checkForWin() {
         var didWin: Bool = true
         

@@ -12,7 +12,6 @@ class NewPlayerViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet var nameAlreadyTakenLabel: UILabel!
     @IBOutlet var playerName: UITextField!
     let playerModel = PlayerModel()
-    var players: [String]!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -26,6 +25,15 @@ class NewPlayerViewController: UIViewController, UITextFieldDelegate {
         // Dispose of any resources that can be recreated.
     }
     
+    /**
+    Performs the necessary actions when the OK button is pushed.
+    
+    This method causes the UITextField playerName to resign first responder
+    if the new player's name is not already taken, and updated the
+    nameAlreadyTaken label if the name is already taken.
+    
+    :param: sender The OK UIButton
+    */
     @IBAction func okButtonPushed(sender: UIButton) {
         if !(contains(playerModel.getPlayerList(), playerName.text)) {
             playerName.resignFirstResponder()
@@ -36,6 +44,15 @@ class NewPlayerViewController: UIViewController, UITextFieldDelegate {
         }
     }
     
+    /**
+    Performs the necessary actions when the keyboard Done button is pushed.
+    
+    This method causes the UITextField playerName to resign first responder
+    if the new player's name is not already taken, and updated the
+    nameAlreadyTaken label if the name is already taken.
+    
+    :param: textField The UITextField from the view
+    */
     func textFieldShouldReturn(textField: UITextField!) -> Bool {
         if !(contains(playerModel.getPlayerList(), playerName.text)) {
             playerName.resignFirstResponder()
