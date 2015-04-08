@@ -53,7 +53,7 @@ class NewPlayerViewController: UIViewController, UITextFieldDelegate {
     
     :param: textField The UITextField from the view
     */
-    func textFieldShouldReturn(textField: UITextField!) -> Bool {
+    func textFieldShouldReturn(textField: UITextField) -> Bool {
         if !(contains(playerModel.getPlayerList(), playerName.text)) {
             playerName.resignFirstResponder()
             nameAlreadyTakenLabel.text = ""
@@ -71,7 +71,7 @@ class NewPlayerViewController: UIViewController, UITextFieldDelegate {
     }
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-            var destinationVC = segue.destinationViewController as NewGameViewController
+            var destinationVC = segue.destinationViewController as! NewGameViewController
             playerModel.setPlayerName(playerName.text)
             destinationVC.playerModel = playerModel
     }

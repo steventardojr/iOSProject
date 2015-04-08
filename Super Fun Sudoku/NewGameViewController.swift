@@ -60,7 +60,7 @@ class NewGameViewController: UIViewController {
     }
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        var destinationVC = segue.destinationViewController as GameBoardViewController
+        var destinationVC = segue.destinationViewController as! GameBoardViewController
         destinationVC.playerModel = playerModel
     }
     

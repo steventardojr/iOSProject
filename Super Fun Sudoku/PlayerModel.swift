@@ -31,7 +31,7 @@ class PlayerModel {
             self.players = []
         }
         else {
-            self.players = userDefaults.objectForKey("players") as [String]
+            self.players = userDefaults.objectForKey("players") as! [String]
         }
     }
     
@@ -138,10 +138,10 @@ class PlayerModel {
     */
     func getUserDefaults() {
         let userDefaults = NSUserDefaults.standardUserDefaults()
-        self.playerName = userDefaults.objectForKey(self.playerName) as String
+        self.playerName = userDefaults.objectForKey(self.playerName) as! String
         self.win = userDefaults.integerForKey("\(self.playerName)win")
         self.loss = userDefaults.integerForKey("\(self.playerName)loss")
-        self.players = userDefaults.objectForKey("players") as [String]
+        self.players = userDefaults.objectForKey("players") as! [String]
     }
     
     /**

@@ -42,7 +42,7 @@ class GameBoardViewController: UIViewController, UITextFieldDelegate {
         // Dispose of any resources that can be recreated.
     }
     
-    override func touchesBegan(touches: NSSet, withEvent event: UIEvent) {
+    override func touchesBegan(touches: Set<NSObject>, withEvent event: UIEvent) {
         // Call check for win after a UITextField is no longer being edited
         self.view.endEditing(true)
         checkForWin()
@@ -62,7 +62,7 @@ class GameBoardViewController: UIViewController, UITextFieldDelegate {
     
     func textField(textField: UITextField, shouldChangeCharactersInRange range: NSRange, replacementString string: String) -> Bool {
         // Limits each UITextField to one character
-        let maxLength = countElements(textField.text) + countElements(string) - range.length
+        let maxLength = count(textField.text) + count(string) - range.length
         return maxLength <= 1
     }
     
