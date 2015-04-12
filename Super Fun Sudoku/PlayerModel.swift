@@ -121,7 +121,7 @@ class PlayerModel {
         self.loss = newLosses
         var keyStore = NSUbiquitousKeyValueStore.defaultStore()
         userDefaults.setInteger(self.loss, forKey: "\(self.playerName)loss")
-        keyStore.setObject(self.win, forKey: "\(self.playerName)loss")
+        keyStore.setObject(self.loss, forKey: "\(self.playerName)loss")
         userDefaults.synchronize()
         keyStore.synchronize()
     }
@@ -155,10 +155,10 @@ class PlayerModel {
             self.win = keyStore.objectForKey("\(self.playerName)win") as! Int
         }
         if userDefaults.integerForKey("\(self.playerName)loss") > keyStore.objectForKey("\(self.playerName)loss") as? Int {
-            self.win = userDefaults.integerForKey("\(self.playerName)loss")
+            self.loss = userDefaults.integerForKey("\(self.playerName)loss")
         }
         else {
-            self.win = keyStore.objectForKey("\(self.playerName)loss") as! Int
+            self.loss = keyStore.objectForKey("\(self.playerName)loss") as! Int
         }
         self.players = userDefaults.objectForKey("players") as! [String]
     }
