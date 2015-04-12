@@ -32,6 +32,7 @@
 
 /* Begin PBXFileReference section */
 		B01597781AB53A7E0034C8E4 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
+		B04C6EED1ADAD9E500448CD3 /* Super Fun Sudoku.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = "Super Fun Sudoku.entitlements"; sourceTree = "<group>"; };
 		B076B9B71AB4C364004325A3 /* PlayerModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlayerModel.swift; sourceTree = "<group>"; };
 		B076B9B91AB4F39B004325A3 /* LoadPlayerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoadPlayerViewController.swift; sourceTree = "<group>"; };
 		B0BE01FE1AB6637C006F2833 /* GameBoardViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameBoardViewController.swift; sourceTree = "<group>"; };
@@ -87,6 +88,7 @@
 		B0E521E41A87E1940044BE1A /* Super Fun Sudoku */ = {
 			isa = PBXGroup;
 			children = (
+				B04C6EED1ADAD9E500448CD3 /* Super Fun Sudoku.entitlements */,
 				B0E521E71A87E1940044BE1A /* AppDelegate.swift */,
 				B01597781AB53A7E0034C8E4 /* Main.storyboard */,
 				B076B9B71AB4C364004325A3 /* PlayerModel.swift */,
@@ -177,6 +179,11 @@
 					B0E521E11A87E1940044BE1A = {
 						CreatedOnToolsVersion = 6.1.1;
 						DevelopmentTeam = 2L92EUB6UQ;
+						SystemCapabilities = {
+							com.apple.iCloud = {
+								enabled = 1;
+							};
+						};
 					};
 					B0E521F61A87E1940044BE1A = {
 						CreatedOnToolsVersion = 6.1.1;
@@ -349,6 +356,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = "Super Fun Sudoku/Super Fun Sudoku.entitlements";
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				INFOPLIST_FILE = "Super Fun Sudoku/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -360,6 +368,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = "Super Fun Sudoku/Super Fun Sudoku.entitlements";
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				INFOPLIST_FILE = "Super Fun Sudoku/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";

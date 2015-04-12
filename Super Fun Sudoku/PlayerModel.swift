@@ -101,7 +101,11 @@ class PlayerModel {
     func setWins(newWins: Int) {
         self.win = newWins
         let userDefaults = NSUserDefaults.standardUserDefaults()
+        var keyStore = NSUbiquitousKeyValueStore.defaultStore()
         userDefaults.setInteger(self.win, forKey: "\(self.playerName)win")
+        keyStore.setObject(self.win, forKey: "\(self.playerName)win")
+        userDefaults.synchronize()
+        keyStore.synchronize()
     }
     
     /**
@@ -115,7 +119,11 @@ class PlayerModel {
     func setLosses(newLosses: Int) {
         let userDefaults = NSUserDefaults.standardUserDefaults()
         self.loss = newLosses
+        var keyStore = NSUbiquitousKeyValueStore.defaultStore()
         userDefaults.setInteger(self.loss, forKey: "\(self.playerName)loss")
+        keyStore.setObject(self.win, forKey: "\(self.playerName)loss")
+        userDefaults.synchronize()
+        keyStore.synchronize()
     }
     
     /**
@@ -138,9 +146,20 @@ class PlayerModel {
     */
     func getUserDefaults() {
         let userDefaults = NSUserDefaults.standardUserDefaults()
+        var keyStore = NSUbiquitousKeyValueStore.defaultStore()
         self.playerName = userDefaults.objectForKey(self.playerName) as! String
-        self.win = userDefaults.integerForKey("\(self.playerName)win")
-        self.loss = userDefaults.integerForKey("\(self.playerName)loss")
+        if userDefaults.integerForKey("\(self.playerName)win") > keyStore.objectForKey("\(self.playerName)win") as? Int {
+            self.win = userDefaults.integerForKey("\(self.playerName)win")
+        }
+        else {
+            self.win = keyStore.objectForKey("\(self.playerName)win") as! Int
+        }
+        if userDefaults.integerForKey("\(self.playerName)loss") > keyStore.objectForKey("\(self.playerName)loss") as? Int {
+            self.win = userDefaults.integerForKey("\(self.playerName)loss")
+        }
+        else {
+            self.win = keyStore.objectForKey("\(self.playerName)loss") as! Int
+        }
         self.players = userDefaults.objectForKey("players") as! [String]
     }
     
@@ -156,10 +175,15 @@ class PlayerModel {
     */
     func removeUserDefaults(playerToRemove: String, indexForArray: Int) {
         let userDefaults = NSUserDefaults.standardUserDefaults()
+        var keyStore = NSUbiquitousKeyValueStore.defaultStore()
         userDefaults.removeObjectForKey(playerToRemove)
         userDefaults.removeObjectForKey("\(playerToRemove)win")
+        keyStore.removeObjectForKey("\(playerToRemove)win")
         userDefaults.removeObjectForKey("\(playerToRemove)loss")
+        keyStore.removeObjectForKey("\(playerToRemove)loss")
         self.players.removeAtIndex(indexForArray)
         userDefaults.setObject(self.players as Array, forKey: "players")
+        userDefaults.synchronize()
+        keyStore.synchronize()
     }
 }
