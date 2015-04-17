@@ -17,7 +17,8 @@ class NewGameViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
-        welcomeLabel.text = "Welcome, \(playerModel.getPlayerName())"
+        
+        welcomeLabel.text = "Welcome \(playerModel.getPlayerName())"
         winLoss.text = "NUMBER OF WINS/LOSSES: \(playerModel.getWins())/\(playerModel.getLosses())"
         if (playerModel.getWins() != 0 && playerModel.getLosses() == 0) {
             winPercent.text = "WIN/LOSS RATIO: ∞"
@@ -38,7 +39,12 @@ class NewGameViewController: UIViewController {
     }
     
     override func viewDidAppear(animated: Bool) {
-        welcomeLabel.text = "Welcome, \(playerModel.getPlayerName())"
+        /*
+        This method is used to update values in the view
+        if the player arrives at the view by using the back button
+        in the Navigation Controller
+        */
+        welcomeLabel.text = "Welcome \(playerModel.getPlayerName())"
         winLoss.text = "NUMBER OF WINS/LOSSES: \(playerModel.getWins())/\(playerModel.getLosses())"
         if (playerModel.getWins() != 0 && playerModel.getLosses() == 0) {
             winPercent.text = "WIN/LOSS RATIO: ∞"
@@ -54,7 +60,7 @@ class NewGameViewController: UIViewController {
     }
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        var destinationVC = segue.destinationViewController as GameBoardViewController
+        var destinationVC = segue.destinationViewController as! GameBoardViewController
         destinationVC.playerModel = playerModel
     }
     

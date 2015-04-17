@@ -35,14 +35,20 @@ class LoadPlayerViewController: UIViewController,UIPickerViewDataSource,UIPicker
     }
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        var destinationVC = segue.destinationViewController as NewGameViewController
+        var destinationVC = segue.destinationViewController as! NewGameViewController
+        /*
+        If the user does not touch the UIPickerView, this if statement
+        sets the selected player to the first saved player.
+        */
         if selectedPlayer == nil {
             selectedPlayer = players[0]
         }
+        
         playerModel.setPlayerName(selectedPlayer)
         playerModel.getUserDefaults()
         destinationVC.playerModel = playerModel
     }
+    
     
     func numberOfComponentsInPickerView(pickerView: UIPickerView) -> Int {
         return 1
@@ -62,6 +68,13 @@ class LoadPlayerViewController: UIViewController,UIPickerViewDataSource,UIPicker
         arrayIndex = row
     }
     
+    /**
+    Checks if the array in the Player model is empty
+    
+    This method checks if the array in the Player model is empty,
+    disables the load and delete buttons, and adds the label
+    "No Saved Players"
+    */
     func playerListIsEmpty() {
         if playerModel.getPlayerList().isEmpty {
             loadButton.enabled = false
@@ -70,10 +83,24 @@ class LoadPlayerViewController: UIViewController,UIPickerViewDataSource,UIPicker
         }
     }
     
+    /**
+    Performs the necessary actions when the Delete button is pushed
+    
+    This method removes the selected player from the array in the Player model,
+    and removes the values stored for keys associated with the player's name
+    in NSUserDefaults, then reloads the picker
+    
+    :param: sender The Delete UIButton
+    */
     @IBAction func deleteButtonPush(sender: UIButton) {
+        /*
+        If the user does not touch the UIPickerView, this if statement
+        sets the selected player to the first saved player.
+        */
         if selectedPlayer == nil {
             selectedPlayer = players[0]
         }
+        
         playerModel.removeUserDefaults(selectedPlayer, indexForArray: arrayIndex)
         players = playerModel.getPlayerList()
         picker.reloadAllComponents()
