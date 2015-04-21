@@ -181,7 +181,7 @@
 						DevelopmentTeam = 2L92EUB6UQ;
 						SystemCapabilities = {
 							com.apple.iCloud = {
-								enabled = 1;
+								enabled = 0;
 							};
 						};
 					};
