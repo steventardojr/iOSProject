@@ -31,7 +31,7 @@ class PlayerModel {
             self.players = []
         }
         else {
-            self.players = userDefaults.objectForKey("players") as! [String]
+            self.players = userDefaults.objectForKey("players") as [String]
         }
     }
     
@@ -147,20 +147,20 @@ class PlayerModel {
     func getUserDefaults() {
         let userDefaults = NSUserDefaults.standardUserDefaults()
         var keyStore = NSUbiquitousKeyValueStore.defaultStore()
-        self.playerName = userDefaults.objectForKey(self.playerName) as! String
+        self.playerName = userDefaults.objectForKey(self.playerName) as String
         if userDefaults.integerForKey("\(self.playerName)win") > keyStore.objectForKey("\(self.playerName)win") as? Int {
             self.win = userDefaults.integerForKey("\(self.playerName)win")
         }
         else {
-            self.win = keyStore.objectForKey("\(self.playerName)win") as! Int
+            self.win = keyStore.objectForKey("\(self.playerName)win") as Int
         }
         if userDefaults.integerForKey("\(self.playerName)loss") > keyStore.objectForKey("\(self.playerName)loss") as? Int {
             self.loss = userDefaults.integerForKey("\(self.playerName)loss")
         }
         else {
-            self.loss = keyStore.objectForKey("\(self.playerName)loss") as! Int
+            self.loss = keyStore.objectForKey("\(self.playerName)loss") as Int
         }
-        self.players = userDefaults.objectForKey("players") as! [String]
+        self.players = userDefaults.objectForKey("players") as [String]
     }
     
     /**
