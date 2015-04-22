@@ -35,7 +35,7 @@ class LoadPlayerViewController: UIViewController,UIPickerViewDataSource,UIPicker
     }
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        var destinationVC = segue.destinationViewController as! NewGameViewController
+        var destinationVC = segue.destinationViewController as NewGameViewController
         /*
         If the user does not touch the UIPickerView, this if statement
         sets the selected player to the first saved player.
