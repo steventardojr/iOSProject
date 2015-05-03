@@ -63,9 +63,23 @@ class LoadPlayerViewController: UIViewController,UIPickerViewDataSource,UIPicker
         return players[row]
     }
     
+    func pickerView(pickerView: UIPickerView, viewForRow row: Int, forComponent component: Int, reusingView view: UIView!) -> UIView {
+        let pickerLabel = UILabel()
+        let titleData = players[row]
+        arrayIndex = row
+        let myTitle = NSAttributedString(string: titleData, attributes: [NSFontAttributeName:UIFont(name: "Noteworthy-Bold", size: 30.0)!,NSForegroundColorAttributeName:UIColor.blackColor()])
+        pickerLabel.attributedText = myTitle
+        pickerLabel.textAlignment = .Center
+        return pickerLabel
+    }
+    
     func pickerView(pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
         selectedPlayer = players[row]
         arrayIndex = row
+    }
+    
+    func pickerView(pickerView: UIPickerView, rowHeightForComponent component: Int) -> CGFloat {
+        return 50.0
     }
     
     /**
@@ -77,8 +91,8 @@ class LoadPlayerViewController: UIViewController,UIPickerViewDataSource,UIPicker
     */
     func playerListIsEmpty() {
         if playerModel.getPlayerList().isEmpty {
-            loadButton.enabled = false
-            deleteButton.enabled = false
+            loadButton.hidden = true
+            deleteButton.hidden = true
             noSavedPlayersLabel.text = "No Saved Players"
         }
     }
