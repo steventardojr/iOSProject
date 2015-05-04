@@ -19,12 +19,14 @@ class PlayerModel {
     var playerName: String
     var win: Int
     var loss: Int
+    var bestTime: String
     var players: [String]
     
     init() {
         self.playerName = ""
         self.win = 0
         self.loss = 0
+        self.bestTime = "00:00:00"
         let userDefaults = NSUserDefaults.standardUserDefaults()
         // Initialize array even if NSUserDefaults does not contain a value
         if userDefaults.objectForKey("players") == nil {
@@ -68,6 +70,18 @@ class PlayerModel {
     */
     func getLosses() -> Int {
         return self.loss
+    }
+    
+    /**
+    Returns the player's best time.
+    
+    This method returns the player's best time
+    as a String.
+    
+    :returns: loss Player's number of wins
+    */
+    func getBestTime() -> String {
+        return self.bestTime
     }
     
     /**
@@ -127,6 +141,26 @@ class PlayerModel {
     }
     
     /**
+    Updates the player's best time.
+    
+    This method updates the player's best time
+    and then updates the value in NSUserDefaults.
+    
+    :param: newLosses The new number of losses
+    */
+    func setBestTime(newBestTime: String) {
+        if newBestTime < self.bestTime || self.bestTime == "00:00:00" {
+            let userDefaults = NSUserDefaults.standardUserDefaults()
+            self.bestTime = newBestTime
+            var keyStore = NSUbiquitousKeyValueStore.defaultStore()
+            userDefaults.setObject(self.bestTime, forKey: "\(self.playerName)bestTime")
+            keyStore.setObject(self.bestTime, forKey: "\(self.playerName)bestTime")
+            userDefaults.synchronize()
+            keyStore.synchronize()
+        }
+    }
+    
+    /**
     Returns the saved players Array.
     
     This method returns the Array that contains
@@ -160,6 +194,15 @@ class PlayerModel {
         else {
             self.loss = keyStore.objectForKey("\(self.playerName)loss") as! Int
         }
+        if userDefaults.objectForKey("\(self.playerName)bestTime") == nil || (userDefaults.objectForKey("\(self.playerName)bestTime") as! String) == "00:00:00" {
+            self.bestTime = "00:00:00"
+        }
+        else if (userDefaults.objectForKey("\(self.playerName)bestTime") as! String) < (keyStore.objectForKey("\(self.playerName)bestTime") as! String) {
+            self.bestTime = userDefaults.objectForKey("\(self.playerName)bestTime") as! String
+        }
+        else {
+            self.bestTime = keyStore.objectForKey("\(self.playerName)bestTime") as! String
+        }
         self.players = userDefaults.objectForKey("players") as! [String]
     }
     
@@ -181,6 +224,8 @@ class PlayerModel {
         keyStore.removeObjectForKey("\(playerToRemove)win")
         userDefaults.removeObjectForKey("\(playerToRemove)loss")
         keyStore.removeObjectForKey("\(playerToRemove)loss")
+        userDefaults.removeObjectForKey("\(playerToRemove)bestTime")
+        keyStore.removeObjectForKey("\(playerToRemove)bestTime")
         self.players.removeAtIndex(indexForArray)
         userDefaults.setObject(self.players as Array, forKey: "players")
         userDefaults.synchronize()

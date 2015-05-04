@@ -13,6 +13,7 @@ class NewGameViewController: UIViewController {
     @IBOutlet var winLoss: UILabel!
     @IBOutlet var winPercent: UILabel!
     var playerModel: PlayerModel!
+    @IBOutlet var bestTime: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -31,6 +32,7 @@ class NewGameViewController: UIViewController {
             var winString: String = String(format: "%.2f", winDouble)
             winPercent.text = "WIN/LOSS RATIO: \(winString)"
         }
+        bestTime.text = "BEST TIME: \(playerModel.getBestTime())"
     }
     
     override func didReceiveMemoryWarning() {
@@ -57,6 +59,7 @@ class NewGameViewController: UIViewController {
             var winString: String = String(format: "%.2f", winDouble)
             winPercent.text = "WIN/LOSS RATIO: \(winString)"
         }
+        bestTime.text = "BEST TIME: \(playerModel.getBestTime())"
     }
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {

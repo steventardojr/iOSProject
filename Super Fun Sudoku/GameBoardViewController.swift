@@ -346,6 +346,7 @@ class GameBoardViewController: UIViewController, UITextFieldDelegate {
             winLabel.text = "You Win!"
             timer.invalidate()
             playerModel.setWins(playerModel.getWins() + 1)
+            playerModel.setBestTime(timePassed.text as String!)
         }
     }
 }
