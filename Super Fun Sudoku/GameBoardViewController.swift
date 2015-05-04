@@ -21,6 +21,9 @@ class GameBoardViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet var winLabel: UILabel!
     @IBOutlet var backLabel: UILabel!
     var playerModel: PlayerModel!
+    @IBOutlet var timePassed: UILabel!
+    var startTime: NSTimeInterval!
+    var timer: NSTimer!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -35,6 +38,11 @@ class GameBoardViewController: UIViewController, UITextFieldDelegate {
             boardRow[i] = tempBoardRow
         }
         setUpGame()
+        startTime = NSTimeInterval()
+        timer = NSTimer()
+        let aSelector : Selector = "updateTime"
+        timer = NSTimer.scheduledTimerWithTimeInterval(0.1, target: self, selector: aSelector, userInfo: nil, repeats: true)
+        startTime = NSDate.timeIntervalSinceReferenceDate()
     }
     
     override func didReceiveMemoryWarning() {
@@ -64,6 +72,33 @@ class GameBoardViewController: UIViewController, UITextFieldDelegate {
         // Limits each UITextField to one character
         let maxLength = count(textField.text) + count(string) - range.length
         return maxLength <= 1
+    }
+    
+    func updateTime() {
+        var currentTime = NSDate.timeIntervalSinceReferenceDate()
+        
+        //Find the difference between current time and start time.
+        var elapsedTime: NSTimeInterval = currentTime - startTime
+        
+        //calculate the minutes in elapsed time.
+        let hours = UInt8(elapsedTime / 3600.0)
+        elapsedTime -= (NSTimeInterval(hours) * 3600)
+        
+        //calculate the seconds in elapsed time.
+        let minutes = UInt8(elapsedTime / 60.0)
+        elapsedTime -= (NSTimeInterval(minutes) * 60)
+        
+        //find out the fraction of milliseconds to be displayed.
+        let seconds = UInt8(elapsedTime)
+        elapsedTime -= NSTimeInterval(seconds)
+        
+        //add the leading zero for minutes, seconds and millseconds and store them as string constants
+        let strHours = hours > 9 ? "\(String(hours))":"0\(String(hours))"
+        let strMinutes = minutes > 9 ? "\(String(minutes))":"0\(String(minutes))"
+        let strSeconds = seconds > 9 ? "\(String(seconds))":"0\(String(seconds))"
+        
+        //concatenate minuets, seconds and milliseconds as assign it to the UILabel
+        timePassed.text = "\(strHours):\(strMinutes):\(strSeconds)"
     }
     
     /**
@@ -309,6 +344,7 @@ class GameBoardViewController: UIViewController, UITextFieldDelegate {
         if didWin {
             backLabel.text = ""
             winLabel.text = "You Win!"
+            timer.invalidate()
             playerModel.setWins(playerModel.getWins() + 1)
         }
     }
