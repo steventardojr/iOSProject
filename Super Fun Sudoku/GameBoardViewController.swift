@@ -452,6 +452,7 @@ class GameBoardViewController: UIViewController, UITextFieldDelegate {
             timer.invalidate()
             playerModel.setWins(playerModel.getWins() + 1)
             playerModel.setBestTime(timePassed.text as String!)
+            giveUpButton.setTitle("", forState: UIControlState.Normal)
             giveUpButton.enabled = false
         }
     }
