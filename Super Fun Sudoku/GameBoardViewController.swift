@@ -26,12 +26,8 @@ class GameBoardViewController: UIViewController, UITextFieldDelegate {
     var timer: NSTimer!
     var boardRow: [[UITextField]]!
     @IBOutlet var giveUpButton: UIButton!
-    var baseHours: Int!
-    var baseMinutes: Int!
-    var baseSeconds: Int!
-    var newHours: Int!
-    var newMinutes: Int!
-    var newSeconds: Int!
+    var baseTimeElapsed: Double!
+    var newTimeElapsed: Double!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -55,9 +51,7 @@ class GameBoardViewController: UIViewController, UITextFieldDelegate {
                     }
                 }
                 boardRow[i] = tempBoardRow
-                baseHours = (userDefaults.objectForKey("\(playerModel.getPlayerName())hours") as! Int)
-                baseMinutes = (userDefaults.objectForKey("\(playerModel.getPlayerName())minutes") as! Int)
-                baseSeconds = (userDefaults.objectForKey("\(playerModel.getPlayerName())seconds") as! Int)
+                baseTimeElapsed = (userDefaults.objectForKey("\(playerModel.getPlayerName())timeElapsed") as! Double)
             }
         }
         else {
@@ -69,9 +63,7 @@ class GameBoardViewController: UIViewController, UITextFieldDelegate {
                 boardRow[i] = tempBoardRow
             }
             setUpGame()
-            baseHours = 0
-            baseMinutes = 0
-            baseSeconds = 0
+            baseTimeElapsed = 0.0
         }
         
         startTime = NSTimeInterval()
@@ -95,9 +87,7 @@ class GameBoardViewController: UIViewController, UITextFieldDelegate {
                     userDefaults.setObject(tempBoardRow[j].text, forKey: "\(playerModel.getPlayerName())\(i)\(j)")
                 }
             }
-            userDefaults.setObject(newHours, forKey: "\(playerModel.getPlayerName())hours")
-            userDefaults.setObject(newMinutes, forKey: "\(playerModel.getPlayerName())minutes")
-            userDefaults.setObject(newSeconds, forKey: "\(playerModel.getPlayerName())seconds")
+            userDefaults.setObject(newTimeElapsed, forKey: "\(playerModel.getPlayerName())timeElapsed")
             
             var isSaved = true
             userDefaults.setObject(isSaved, forKey: "\(playerModel.getPlayerName())isSaved")
@@ -148,15 +138,13 @@ class GameBoardViewController: UIViewController, UITextFieldDelegate {
     
     func updateTime() {
         var currentTime = NSDate.timeIntervalSinceReferenceDate()
-        var elapsedTime: NSTimeInterval = currentTime - startTime
-        let hours = UInt8(elapsedTime / 3600.0) + UInt8(baseHours)
-        newHours = Int(hours)
+        var elapsedTime: NSTimeInterval = currentTime - startTime + baseTimeElapsed
+        newTimeElapsed = elapsedTime
+        let hours = UInt8(elapsedTime / 3600.0)
         elapsedTime -= (NSTimeInterval(hours) * 3600)
-        let minutes = UInt8(elapsedTime / 60.0) + UInt8(baseMinutes)
-        newMinutes = Int(minutes)
+        let minutes = UInt8(elapsedTime / 60.0)
         elapsedTime -= (NSTimeInterval(minutes) * 60)
-        let seconds = UInt8(elapsedTime) + UInt8(baseSeconds)
-        newSeconds = Int(seconds)
+        let seconds = UInt8(elapsedTime)
         elapsedTime -= NSTimeInterval(seconds)
         let strHours = hours > 9 ? "\(String(hours))":"0\(String(hours))"
         let strMinutes = minutes > 9 ? "\(String(minutes))":"0\(String(minutes))"

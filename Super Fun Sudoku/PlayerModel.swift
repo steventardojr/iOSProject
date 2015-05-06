@@ -238,9 +238,7 @@ class PlayerModel {
                 userDefaults.removeObjectForKey("\(playerToRemove)\(i)\(j)enab")
             }
         }
-        userDefaults.removeObjectForKey("\(playerToRemove)hours")
-        userDefaults.removeObjectForKey("\(playerToRemove)minutes")
-        userDefaults.removeObjectForKey("\(playerToRemove)seconds")
+        userDefaults.removeObjectForKey("\(playerToRemove)timeElapsed")
         userDefaults.removeObjectForKey("\(playerToRemove)isSaved")
         self.players.removeAtIndex(indexForArray)
         userDefaults.setObject(self.players as Array, forKey: "players")
