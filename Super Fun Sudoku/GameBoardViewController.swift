@@ -24,25 +24,47 @@ class GameBoardViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet var timePassed: UILabel!
     var startTime: NSTimeInterval!
     var timer: NSTimer!
+    var boardRow: [[UITextField]]!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
+        var isSaved = false
         
-        var boardRow = [boardRow1, boardRow2, boardRow3, boardRow4, boardRow5, boardRow6, boardRow7, boardRow8, boardRow9]
-        for i in 0...8 {
-            var tempBoardRow = boardRow[i]
-            for j in 0...8 {
-                tempBoardRow[j].delegate = self
-            }
-            boardRow[i] = tempBoardRow
+        boardRow = [boardRow1, boardRow2, boardRow3, boardRow4, boardRow5, boardRow6, boardRow7, boardRow8, boardRow9]
+        
+        let userDefaults = NSUserDefaults.standardUserDefaults()
+        if (userDefaults.objectForKey("\(playerModel.getPlayerName())isSaved") != nil) {
+            isSaved = userDefaults.objectForKey("\(playerModel.getPlayerName())isSaved") as! Bool
         }
-        setUpGame()
+        if isSaved {
+            for i in 0...8 {
+                var tempBoardRow = boardRow[i]
+                for j in 0...8 {
+                    tempBoardRow[j].text = userDefaults.objectForKey("\(playerModel.getPlayerName())\(i)\(j)") as! String
+                    //tempBoardRow[j].delegate = self
+                }
+                boardRow[i] = tempBoardRow
+            }
+        }
+        else {
+            for i in 0...8 {
+                var tempBoardRow = boardRow[i]
+                for j in 0...8 {
+                    tempBoardRow[j].delegate = self
+                }
+                boardRow[i] = tempBoardRow
+            }
+            setUpGame()
+        }
+        
         startTime = NSTimeInterval()
         timer = NSTimer()
         let aSelector : Selector = "updateTime"
         timer = NSTimer.scheduledTimerWithTimeInterval(0.1, target: self, selector: aSelector, userInfo: nil, repeats: true)
         startTime = NSDate.timeIntervalSinceReferenceDate()
+        isSaved = true
+        userDefaults.setObject(isSaved, forKey: "\(playerModel.getPlayerName())isSaved")
     }
     
     override func didReceiveMemoryWarning() {
@@ -99,6 +121,14 @@ class GameBoardViewController: UIViewController, UITextFieldDelegate {
         
         //concatenate minuets, seconds and milliseconds as assign it to the UILabel
         timePassed.text = "\(strHours):\(strMinutes):\(strSeconds)"
+        let userDefaults = NSUserDefaults.standardUserDefaults()
+        for i in 0...8 {
+            var tempBoardRow = boardRow[i]
+            for j in 0...8 {
+                userDefaults.setObject(tempBoardRow[j].text, forKey: "\(playerModel.getPlayerName())\(i)\(j)")
+            }
+        }
+        checkForWin()
     }
     
     /**
@@ -342,6 +372,17 @@ class GameBoardViewController: UIViewController, UITextFieldDelegate {
         }
         
         if didWin {
+            self.view.endEditing(true)
+            for i in 0...8 {
+                var tempBoardRow = boardRow[i]
+                for j in 0...8 {
+                    tempBoardRow[j].enabled = false
+                }
+                boardRow[i] = tempBoardRow
+            }
+            var isSaved = false
+            let userDefaults = NSUserDefaults.standardUserDefaults()
+            userDefaults.setObject(isSaved, forKey: "\(playerModel.getPlayerName())isSaved")
             backLabel.text = ""
             winLabel.text = "You Win!"
             timer.invalidate()

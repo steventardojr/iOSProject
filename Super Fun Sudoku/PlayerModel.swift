@@ -194,11 +194,14 @@ class PlayerModel {
         else {
             self.loss = keyStore.objectForKey("\(self.playerName)loss") as! Int
         }
-        if userDefaults.objectForKey("\(self.playerName)bestTime") == nil || (userDefaults.objectForKey("\(self.playerName)bestTime") as! String) == "00:00:00" {
+        if userDefaults.objectForKey("\(self.playerName)bestTime") == nil && keyStore.objectForKey("\(self.playerName)bestTime") == nil {
             self.bestTime = "00:00:00"
         }
-        else if keyStore.objectForKey("\(self.playerName)bestTime") == nil || (keyStore.objectForKey("\(self.playerName)bestTime") as! String) == "00:00:00" {
-            self.bestTime = "00:00:00"
+        else if keyStore.objectForKey("\(self.playerName)bestTime") == nil {
+            self.bestTime = userDefaults.objectForKey("\(self.playerName)bestTime") as! String
+        }
+        else if userDefaults.objectForKey("\(self.playerName)bestTime") == nil {
+            self.bestTime = keyStore.objectForKey("\(self.playerName)bestTime") as! String
         }
         else if (userDefaults.objectForKey("\(self.playerName)bestTime") as! String) < (keyStore.objectForKey("\(self.playerName)bestTime") as! String) {
             self.bestTime = userDefaults.objectForKey("\(self.playerName)bestTime") as! String
