@@ -232,6 +232,16 @@ class PlayerModel {
         keyStore.removeObjectForKey("\(playerToRemove)loss")
         userDefaults.removeObjectForKey("\(playerToRemove)bestTime")
         keyStore.removeObjectForKey("\(playerToRemove)bestTime")
+        for i in 0...8 {
+            for j in 0...8 {
+                userDefaults.removeObjectForKey("\(playerToRemove)\(i)\(j)")
+                userDefaults.removeObjectForKey("\(playerToRemove)\(i)\(j)enab")
+            }
+        }
+        userDefaults.removeObjectForKey("\(playerToRemove)hours")
+        userDefaults.removeObjectForKey("\(playerToRemove)minutes")
+        userDefaults.removeObjectForKey("\(playerToRemove)seconds")
+        userDefaults.removeObjectForKey("\(playerToRemove)isSaved")
         self.players.removeAtIndex(indexForArray)
         userDefaults.setObject(self.players as Array, forKey: "players")
         userDefaults.synchronize()

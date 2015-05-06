@@ -14,11 +14,14 @@ class NewGameViewController: UIViewController {
     @IBOutlet var winPercent: UILabel!
     var playerModel: PlayerModel!
     @IBOutlet var bestTime: UILabel!
+    @IBOutlet var easyButton: UIButton!
+    @IBOutlet var mediumButton: UIButton!
+    @IBOutlet var hardButton: UIButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
-        
+        var isSaved = false
         welcomeLabel.text = "Welcome \(playerModel.getPlayerName())"
         winLoss.text = "NUMBER OF WINS/LOSSES: \(playerModel.getWins())/\(playerModel.getLosses())"
         if (playerModel.getWins() != 0 && playerModel.getLosses() == 0) {
@@ -33,6 +36,17 @@ class NewGameViewController: UIViewController {
             winPercent.text = "WIN/LOSS RATIO: \(winString)"
         }
         bestTime.text = "BEST TIME: \(playerModel.getBestTime())"
+        let userDefaults = NSUserDefaults.standardUserDefaults()
+        if (userDefaults.objectForKey("\(playerModel.getPlayerName())isSaved") != nil) {
+            isSaved = userDefaults.objectForKey("\(playerModel.getPlayerName())isSaved") as! Bool
+        }
+        if isSaved {
+            easyButton.setTitle("Continue", forState: UIControlState.Normal)
+            mediumButton.setTitle("", forState: UIControlState.Normal)
+            mediumButton.enabled = false
+            hardButton.setTitle("", forState: UIControlState.Normal)
+            hardButton.enabled = false
+        }
     }
     
     override func didReceiveMemoryWarning() {
@@ -46,6 +60,12 @@ class NewGameViewController: UIViewController {
         if the player arrives at the view by using the back button
         in the Navigation Controller
         */
+        easyButton.setTitle("Easy", forState: UIControlState.Normal)
+        mediumButton.setTitle("Medium", forState: UIControlState.Normal)
+        mediumButton.enabled = true
+        hardButton.setTitle("Hard", forState: UIControlState.Normal)
+        hardButton.enabled = true
+        var isSaved = false
         welcomeLabel.text = "Welcome \(playerModel.getPlayerName())"
         winLoss.text = "NUMBER OF WINS/LOSSES: \(playerModel.getWins())/\(playerModel.getLosses())"
         if (playerModel.getWins() != 0 && playerModel.getLosses() == 0) {
@@ -60,6 +80,17 @@ class NewGameViewController: UIViewController {
             winPercent.text = "WIN/LOSS RATIO: \(winString)"
         }
         bestTime.text = "BEST TIME: \(playerModel.getBestTime())"
+        let userDefaults = NSUserDefaults.standardUserDefaults()
+        if (userDefaults.objectForKey("\(playerModel.getPlayerName())isSaved") != nil) {
+            isSaved = userDefaults.objectForKey("\(playerModel.getPlayerName())isSaved") as! Bool
+        }
+        if isSaved {
+            easyButton.setTitle("Continue", forState: UIControlState.Normal)
+            mediumButton.setTitle("", forState: UIControlState.Normal)
+            mediumButton.enabled = false
+            hardButton.setTitle("", forState: UIControlState.Normal)
+            hardButton.enabled = false
+        }
     }
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
